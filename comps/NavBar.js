@@ -14,13 +14,13 @@ padding:2rem
 `
 const LogoCon = styled.div`
 display:flex;
-flex:4;
+flex:6;
 height:5rem;
-padding-left:2rem
+padding-left:5%
 `
 const NavCon = styled.div`
 display:flex;
-flex:6;
+flex:4;
 flex-direction:row;
 justify-content:center;
 alugn-items:center;

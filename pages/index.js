@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import NavBar from '../comps/NavBar'
 import styled from 'styled-components'
 import Rooter from '../comps/Rooter'
+import SocialIcon from '../comps/SocialIcon'
 const Wrraper = styled.div`
 width:100vw;
 height:100vh
@@ -33,6 +34,7 @@ justify-content:center;
 align-items:center;
 display:flex;
 flex-direction:row;
+overflow:hidden;
 `
 
 const Textarea = styled.div`
@@ -61,12 +63,18 @@ overflow:hidden;
 `
 const PicImg=styled.img`
 objet-fit:cover;
-width:50rem;
+width:55rem;
 margin-top:15rem;
-
+position:absolute;
+z-index:2;
+`
+const ColorBlock=styled.img`
+objet-fit:cover;
+width:60rem;
+margin-top:15rem;
 `
 const Intro1 =styled.p`
-font-size:6rem;
+font-size:7rem;
 font-family: 'Baumans', cursive;
 font-weight:300;
 color:#E5E5E5;
@@ -74,13 +82,14 @@ line-hight:.7;
 margin:.1rem
 `
 const Intro2 =styled.p`
-font-size:3rem;
+font-size:2.75rem;
 line-hight:.7;
 font-family: 'Baumans', cursive;
 font-weight:200;
 color:#E5E5E5;
 margin:.1rem
 `
+
 export default function Home() {
   return (
       <Wrraper>
@@ -92,8 +101,10 @@ export default function Home() {
           <Intro1>Hello, I'm Levi.</Intro1>
           <Intro2>Front-end Developer</Intro2>
           <Intro2>UI/UX Desinger</Intro2>
+           <SocialIcon/>
         </ShortIntroCon>
-          <PicCon > <PicImg src='LeviChen.png'></PicImg> </PicCon>
+       
+          <PicCon >  <ColorBlock src='Vector.png'/> <PicImg src='LeviChen.png'/> </PicCon>
         </MainViewCon>
        
         <MainView src='ocean.svg'/>
