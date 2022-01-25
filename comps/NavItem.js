@@ -19,7 +19,7 @@ margin-right:2.5rem
 const NavItemText = styled.p`
 font-size:1.5rem;
 font-family: 'Baumans', cursive;
-color:#E5E5E5
+color: ${(props)=>props.navColor1};
 `
 const NavItemIcon_home = styled.div`
 size:2rem;
@@ -34,7 +34,7 @@ display:${(props) => props.aboutdisplay}
 const NavItemIcon_portfolio = styled.div`
 size:2rem;
 margin-right:.5rem;
-display:${(props) => props.portfoliodisplay}
+display:${(props) => props.projectsdisplay}
 `
 const NavItemIcon_blogs = styled.div`
 size:2rem;
@@ -50,38 +50,49 @@ const NavItem = ({
     text = "home",
     homedisplay = 'block',
     aboutdisplay = 'none',
-    portfoliodisplay = 'none',
+    projectsdisplay = 'none',
     blogsdisplay = 'none',
     contactdisplay = 'none',
-}) => {
+    navColor1 ='#E5E5E5',
+    navColor2,
+    navColor3,
+    navColor4,
+    navColor5,
+   HandleClick=()=>{},
+   onMouseOver=()=>{},
+   onMouseOut=()=>{},
+  
 
-    return <NavItemCon>
+}) => {
+   
+
+    return <NavItemCon onClick={HandleClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut} >
         <NavItemIcon_home homedisplay={homedisplay}>
-            <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '1.5rem' }}>
+            <IconContext.Provider value={{ color: navColor1, className: "global-class-name", size: '1.5rem' }}>
                 <FaHome />
             </IconContext.Provider>
         </NavItemIcon_home>
         <NavItemIcon_about aboutdisplay={aboutdisplay}>
-            <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '1.3rem' }}>
+            <IconContext.Provider value={{ color: navColor2, className: "global-class-name", size: '1.3rem' }}>
                 <FaUserAlt />
             </IconContext.Provider>
         </NavItemIcon_about>
-        <NavItemIcon_portfolio portfoliodisplay={portfoliodisplay}>
-            <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '1.5rem' }}>
+        <NavItemIcon_portfolio projectsdisplay={projectsdisplay}>
+            <IconContext.Provider value={{ color: navColor3, className: "global-class-name", size: '1.5rem' }}>
                 <FaBriefcase />
             </IconContext.Provider>
         </NavItemIcon_portfolio>
          <NavItemIcon_blogs blogsdisplay={blogsdisplay}>
-            <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '1.5rem' }}>
+            <IconContext.Provider value={{ color: navColor4, className: "global-class-name", size: '1.5rem' }}>
                 <FaEdit />
             </IconContext.Provider>
         </NavItemIcon_blogs>
         <NavItemIcon_contact contactdisplay={contactdisplay}>
-            <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '1.5rem' }}>
+            <IconContext.Provider value={{ color: navColor5, className: "global-class-name", size: '1.5rem' }}>
                 <FaMailBulk/>
             </IconContext.Provider>
         </NavItemIcon_contact>
-        <NavItemText> {text} </NavItemText>
+        <NavItemText navColor1={navColor1}  > {text} </NavItemText>
     </NavItemCon>
 
 }

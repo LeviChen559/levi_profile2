@@ -5,6 +5,7 @@ import NavBar from '../comps/NavBar'
 import styled from 'styled-components'
 import Rooter from '../comps/Rooter'
 import SocialIcon from '../comps/SocialIcon'
+import { useState } from 'react'
 const Wrraper = styled.div`
 width:100vw;
 height:100vh
@@ -16,7 +17,7 @@ const NavCon = styled.div`
 display:flex;
 flex-direction:row;
 position:absolute;
-z-index:3;
+z-index:4;
 `
 const MainView = styled.img`
 width:100vw;
@@ -91,10 +92,49 @@ margin:.1rem
 `
 
 export default function Home() {
+
+  const [navColor1, SetnavColor1]=useState(false)
+  const [navColor2, SetnavColor2]=useState(false)
+  const [navColor3, SetnavColor3]=useState(false)
+  const [navColor4, SetnavColor4]=useState(false)
+  const [navColor5, SetnavColor5]=useState(false)
+
+  const Home=()=>{
+    SetnavColor1(!navColor1)
+  }
+  const About=(e)=>{
+    
+    SetnavColor2(!navColor2)
+  }  
+  const Projects=()=>{
+    SetnavColor3(!navColor3)
+   
+  } 
+  const Blogs=()=>{
+    SetnavColor4(!navColor4)
+  }
+  const Contact=()=>{
+    SetnavColor5(!navColor5)  
+  }
+
+  const unhover=(e)=>{
+    e.target.style.color='#E5E5E5'
+  }
+ 
   return (
       <Wrraper>
         <NavCon>
-          <NavBar />
+          <NavBar 
+          navColor1={navColor1? '#E9C46A' : '#E5E5E5'} 
+          navColor2={navColor2? '#E9C46A' : '#E5E5E5'} 
+          navColor3={navColor3? '#E9C46A' : '#E5E5E5'} 
+          navColor4={navColor4? '#E9C46A' : '#E5E5E5'} 
+          navColor5={navColor5? '#E9C46A' : '#E5E5E5'} 
+          handleHome={Home}
+          handleAbout={About}
+          handleProjects={Projects}
+          handleBlogs={Blogs}
+          handleContact={Contact} />
         </NavCon>
         <MainViewCon>
         <ShortIntroCon>
