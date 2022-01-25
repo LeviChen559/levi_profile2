@@ -5,13 +5,13 @@ import NavBar from '../comps/NavBar'
 import styled from 'styled-components'
 import Rooter from '../comps/Rooter'
 import SocialIcon from '../comps/SocialIcon'
+
 import { useState } from 'react'
 const Wrraper = styled.div`
 width:100vw;
 height:100vh
 display:flex;
 flex-direction:column;
-
 `
 const NavCon = styled.div`
 display:flex;
@@ -24,7 +24,6 @@ width:100vw;
 height:50rem;
 object-fit:cover;
 display: block;
-
 `
 const MainViewCon = styled.div`
 width:100vw;
@@ -42,7 +41,7 @@ const Textarea = styled.div`
 width:100vw;
 height:30rem;
 background-color:#E9C46A;
-margin:0
+margin:0;
 `
 const ShortIntroCon=styled.div`
 display:flex;
@@ -76,7 +75,7 @@ margin-top:15rem;
 `
 const Intro1 =styled.p`
 font-size:7rem;
-font-family: 'Baumans', cursive;
+font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-hight:.7;
@@ -85,7 +84,7 @@ margin:.1rem
 const Intro2 =styled.p`
 font-size:2.75rem;
 line-hight:.7;
-font-family: 'Baumans', cursive;
+font-family: 'Baumans';
 font-weight:200;
 color:#E5E5E5;
 margin:.1rem
@@ -117,9 +116,6 @@ export default function Home() {
     SetnavColor5(!navColor5)  
   }
 
-  const unhover=(e)=>{
-    e.target.style.color='#E5E5E5'
-  }
  
   return (
       <Wrraper>
@@ -138,7 +134,7 @@ export default function Home() {
         </NavCon>
         <MainViewCon>
         <ShortIntroCon>
-          <Intro1>Hello, I'm Levi.</Intro1>
+          <Intro1>Hello, I am Levi.</Intro1>
           <Intro2>Front-end Developer</Intro2>
           <Intro2>UI/UX Desinger</Intro2>
            <SocialIcon/>
