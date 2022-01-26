@@ -12,12 +12,14 @@ width:100vw;
 height:100vh
 display:flex;
 flex-direction:column;
+
 `
 const NavCon = styled.div`
 display:flex;
 flex-direction:row;
 position:absolute;
 z-index:4;
+
 `
 const MainView = styled.img`
 width:100vw;
@@ -60,6 +62,7 @@ justify-content:center;
 align-items:flex-start;
 height:50rem;
 overflow:hidden;
+
 `
 const PicImg=styled.img`
 objet-fit:cover;
@@ -67,11 +70,19 @@ width:55rem;
 margin-top:15rem;
 position:absolute;
 z-index:2;
+@media (max-width: 780px)
+{
+  width:35rem;
+}
 `
 const ColorBlock=styled.img`
 objet-fit:cover;
 width:60rem;
 margin-top:15rem;
+@media (max-width: 780px)
+{
+  width:30rem;
+}
 `
 const Intro1 =styled.p`
 font-size:7rem;
@@ -79,7 +90,11 @@ font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-hight:.7;
-margin:.1rem
+margin:.1rem;
+@media (max-width: 780px)
+{
+  font-size:3rem;
+}
 `
 const Intro2 =styled.p`
 font-size:2.75rem;
@@ -87,7 +102,13 @@ line-hight:.7;
 font-family: 'Baumans';
 font-weight:200;
 color:#E5E5E5;
-margin:.1rem
+margin:.1rem;
+@media (max-width: 780px)
+{
+  font-size:1rem;
+  line-hight:.1;
+ 
+}
 `
 
 export default function Home() {

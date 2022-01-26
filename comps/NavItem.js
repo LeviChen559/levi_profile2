@@ -15,16 +15,29 @@ justify-content:center;
 align-items:center;
 width:8rem;
 margin-right:2.5rem
+@media (max-width: 780px)
+{
+    width:2.5rem;
+    margin-right:.5rem
+}
 `
 const NavItemText = styled.p`
 font-size:1.5rem;
 font-family: 'Baumans', cursive;
 color: ${(props)=>props.navColor1};
+@media (max-width: 780px)
+{
+  font-size:1rem;
+}
 `
 const NavItemIcon_home = styled.div`
 size:2rem;
 margin-right:.5rem;
-display:${(props) => props.homedisplay}
+display:${(props) => props.homedisplay};
+@media (max-width: 780px)
+{
+    size:1rem;
+}
 `
 const NavItemIcon_about = styled.div`
 size:2rem;
