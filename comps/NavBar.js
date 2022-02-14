@@ -8,7 +8,7 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 alugn-items:center;
-width:100vw;
+width:100%;
 height:10rem;
 padding:2rem
 `
@@ -17,6 +17,7 @@ display:flex;
 flex:6;
 height:5rem;
 padding-left:5%
+width:50%;
 `
 const NavCon = styled.div`
 display:flex;
@@ -25,6 +26,7 @@ flex-direction:row;
 justify-content:center;
 alugn-items:center;
 height:5rem;
+width:50%;
 `
 
 const NavBar = ({

@@ -15,7 +15,7 @@ justify-content:center;
 align-items:center;
 width:8rem;
 margin-right:2.5rem
-@media (max-width: 780px)
+@media (max-width: 1400px)
 {
     width:2.5rem;
     margin-right:.5rem
@@ -25,7 +25,7 @@ const NavItemText = styled.p`
 font-size:1.5rem;
 font-family: 'Baumans', cursive;
 color: ${(props)=>props.navColor1};
-@media (max-width: 780px)
+@media (max-width: 1400px)
 {
   font-size:1rem;
 }
