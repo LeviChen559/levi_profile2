@@ -1,8 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from 'styled-components';
 import Logo from './Logo';
 import NavItem from "./NavItem";
-
+import { useRouter } from "next/router";
 const NavBarCon = styled.div`
 display:flex;
 flex-direction:row;
@@ -30,27 +30,43 @@ width:50%;
 `
 
 const NavBar = ({
-    handleHome=()=>{},
-    handleAbout=()=>{},
-    handleProjects=()=>{},
-    handleBlogs=()=>{},
-    handleContact=()=>{},onMouseOver=()=>{},
-    onMouseOut=()=>{},
-    navColor1,
-    navColor2,
-    navColor3,
-    navColor4,
-    navColor5,
+    
 }) => {
-   
+    const router = useRouter()
+    const [navColor1, SetnavColor1] = useState(false)
+    const [navColor2, SetnavColor2] = useState(false)
+    const [navColor3, SetnavColor3] = useState(false)
+    const [navColor4, SetnavColor4] = useState(false)
+    const [navColor5, SetnavColor5] = useState(false)
+  
+    const Home = () => {
+      SetnavColor1(!navColor1);
+      router.push('/')
+    }
+    const About = (e) => {
+      SetnavColor2(!navColor2)
+    }
+    const Development = () => {
+      SetnavColor3(!navColor3)
+      router.push('/development')
+    }
+    const Design = () => {
+      SetnavColor4(!navColor4)
+      router.push('/design')
+  
+    }
+
+    const Contact = () => {
+      SetnavColor5(!navColor5)
+    }
     return <NavBarCon>
         <LogoCon> <Logo /></LogoCon>
         <NavCon>
-            <NavItem HandleClick={handleHome} onMouseOver={onMouseOver} onMouseOut={onMouseOut} navColor1={navColor1} />
-            <NavItem HandleClick={handleAbout}onMouseOver={onMouseOver} onMouseOut={onMouseOut} homedisplay="none" aboutdisplay="block"  text="about" navColor2={navColor2} navColor1={navColor2}/>
-            <NavItem HandleClick={handleProjects} onMouseOver={onMouseOver} onMouseOut={onMouseOut}homedisplay="none" projectsdisplay="block" text="projects" navColor3={navColor3} navColor1={navColor3}/>
-            <NavItem HandleClick={handleBlogs} onMouseOver={onMouseOver} onMouseOut={onMouseOut}homedisplay="none" blogsdisplay="block" text="blogs"navColor4={navColor4} navColor1={navColor4}/>
-            <NavItem HandleClick={handleContact} onMouseOver={onMouseOver} onMouseOut={onMouseOut}homedisplay="none" contactdisplay="block" text="contact"navColor5={navColor5} navColor1={navColor5}/>
+            <NavItem HandleClick={Home}  navColor1={navColor1 ? '#E9C46A' : '#E5E5E5'} />
+            <NavItem HandleClick={About} homedisplay="none" aboutdisplay="block"  text="about" navColor2={navColor2 ? '#E9C46A' : '#E5E5E5'} />
+            <NavItem HandleClick={Development} homedisplay="none" projectsdisplay="block" text="dev." navColor3={navColor3 ? '#E9C46A' : '#E5E5E5'} />
+            <NavItem HandleClick={Design} homedisplay="none" blogsdisplay="block" text="design" navColor4={navColor4 ? '#E9C46A' : '#E5E5E5'} />
+            <NavItem HandleClick={Contact} homedisplay="none" contactdisplay="block" text="contact"navColor5={navColor5 ? '#E9C46A' : '#E5E5E5'} />
         </NavCon>
     </NavBarCon>
 

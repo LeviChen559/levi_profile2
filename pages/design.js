@@ -18,8 +18,7 @@ align-items:center;
 background-color:#E9C46A;
 `
 const Container = styled.div`
-width:75%;
-height:100%;
+width:80%;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
@@ -190,6 +189,8 @@ border-bottom:.25rem solid #E5E5E5;
 export default function Home() {
   const router = useRouter()
  
+
+
   return (
     <Wrraper>
         <Head>
@@ -201,7 +202,8 @@ export default function Home() {
       <MainView src='ocean.svg' />
       <Container>
         <NavCon>
-          <NavBar/>      </NavCon>
+          <NavBar />
+        </NavCon>
         <MainViewCon>
           <ShortIntroCon>
             <Intro1>Hello, I am Levi.</Intro1>
