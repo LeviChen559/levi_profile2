@@ -25,9 +25,14 @@ const NavItemText = styled.p`
 font-size:1.5rem;
 font-family: 'Baumans', cursive;
 color: ${(props)=>props.navColor1};
+display:flex;
 @media (max-width: 1400px)
 {
   font-size:1rem;
+}
+@media (max-width: 980px)
+{
+    display:none;
 }
 `
 const NavItemIcon_home = styled.div`

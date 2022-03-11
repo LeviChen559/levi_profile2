@@ -214,6 +214,12 @@ export default function Home() {
 
   return (
     <Wrraper>
+        <Head>
+        <title>Levi Chen FrontEnd Developer, UI UX Designer portfolio, BCIT D3 Web Development 2022 </title>
+        <meta name="description" 
+        content="This portfolio includes web and mobile development projects, especially with MongoDB, Express, React, and Node. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022 who enthuse in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. "/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <MainView src='ocean.svg' />
       <Container>
         <NavCon>
