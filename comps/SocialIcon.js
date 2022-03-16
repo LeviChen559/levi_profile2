@@ -30,6 +30,10 @@ width:10rem;
 justify-content:space-between;
 align-items:center;
 height:3.5rem;
+@media (max-width: 800px)
+{
+  width:9rem;
+}
 
 `
 const Linkedin =styled.div`

@@ -4,14 +4,15 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import NavBar from '../comps/NavBar'
 import styled from 'styled-components'
-import Rooter from '../comps/Rooter'
+import Footer from '../comps/Footer'
 import SocialIcon from '../comps/SocialIcon'
 import { useRouter } from 'next/router'
 import { useTransition, animated, useSpring } from '@react-spring/web'
 import { fontSize } from '@mui/system'
 import { project } from '../data/project'
 import ActionAreaCard from '../comps/ActionAreaCard'
-
+import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 const Wrraper = styled.div`
 width:100vw;
 height:100%;
@@ -19,11 +20,11 @@ display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:#E9C46A;
+background-color:#7ca5b8;
 `
 const Container = styled.div`
 width:60%;
-height:100%;
+height:60%;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
@@ -91,7 +92,7 @@ const Content = styled.div`
 display:flex;
 width:90%;
 height:100%;
-background-color:#E9C46A;
+background-color:#7ca5b8;
 margin:0;
 flex-direction:column;
 justify-content:flex-start;
@@ -121,7 +122,7 @@ overflow:hidden;
 const PicImg = styled.img`
 objet-fit:cover;
 width:45rem;
-margin-top:15rem;
+margin-top:9.5rem;
 position:absolute;
 z-index:2;
 margin-left:-2.5rem;
@@ -133,7 +134,7 @@ margin-left:-2.5rem;
 @media (max-width: 1600px)
 {
   width:35rem;
-  margin-top:12.5rem;
+  margin-top:7.5rem;
   margin-left:-5rem;
 }
 @media (max-width: 1200px)
@@ -143,6 +144,12 @@ margin-left:-2.5rem;
   margin-left:-7.5rem;
 }
 @media (max-width: 800px)
+{
+  width:22.5rem;
+  margin-top:10rem;
+  margin-left:-7.5rem;
+}
+@media (max-width: 600px)
 {
   width:20rem;
   margin-top:17.5rem;
@@ -163,16 +170,20 @@ margin-top:10rem;
   margin-letf:-10rem;
 }
 `
-const Intro = styled.p`
+const Intro = styled.div`
 font-size:1.25rem;
 font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-height: 120%;
 margin:.1rem;
+@media (max-width: 600px)
+{
+  font-size:1rem;
+}
 `
 
-const Intro1 = styled.p`
+const Intro1 = styled.div`
 font-size:5rem;
 font-family: 'Baumans';
 font-weight:300;
@@ -192,14 +203,14 @@ margin:.1rem;
   font-size:2rem;
 }
 `
-const Intro2 = styled.p`
+const Intro2 = styled.div`
 font-size:2.25rem;
 font-family: 'Baumans';
 line-height:2.5rem;
 font-weight:200;
 color:#E5E5E5;
-margin-top:2.5rem;
-margin-bottom:2rem;
+margin-top:1rem;
+margin-bottom:1rem;
 &:hover{
   color:#264653
 }
@@ -212,16 +223,17 @@ border-bottom:.25rem solid #E5E5E5;
 `
 const Projects = styled.div`
 margin-top:5rem;
+margin-bottom:20rem;
 display:flex;
 flex-direction:column;
 width:100%;
 height:100%;
 `
-const ProjectItem =styled.div`
+const ProjectItem = styled.div`
 width:100%;
 display:flex;
 flex-direction:row;
-margin-bottom:2rem;
+margin-bottom:5rem;
 justify-content:space-between;
 @media (max-width: 1000px)
 {
@@ -235,17 +247,25 @@ width:40%;
   width:100%;
 }
 `
+
 const ProjectIntro = styled.div`
 width:55%;
-height:100%;
+height:20rem;
 display:flex;
 flex-direction:column;
-justify-contnet:space-around;
+justify-content: space-between;
 align-items:flex-start;
 @media (max-width: 1000px)
 {
   width:100%;
 }
+`
+const ArrowButton = styled.div`
+width:100%;
+height:1rem;
+display:flex;
+flex-direction:row;
+justify-content:flex-end
 `
 export default function Home() {
   const router = useRouter()
@@ -259,6 +279,7 @@ export default function Home() {
     from: { opacity: .75, marginLeft: "100rem" },
     config: { duration: 2000 },
   })
+
   const transitions = useTransition(items, {
     from: {
       opacity: 0,
@@ -270,7 +291,7 @@ export default function Home() {
 
     enter: [
       { opacity: 1, height: 35, innerHeight: 35 },
-      { transform: 'perspective(600px) rotateX(180deg)', color: '#28d79f' },
+      { transform: 'perspective(600px) rotateX(180deg)', color: '#0bb38e' },
       { transform: 'perspective(600px) rotateX(0deg)' },
     ],
     leave: [{ color: '#c23369' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
@@ -292,7 +313,14 @@ export default function Home() {
     return () => ref.current.forEach(clearTimeout)
   }, [])
 
-
+  const scrollToTop0 = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
 
   return (
     <Wrraper>
@@ -325,7 +353,7 @@ export default function Home() {
             <SocialIcon />
           </ShortIntroCon>
 
-          <PicCon >  <ColorBlock src='Vector.png' /> <PicImg src='LeviChen.png' /> </PicCon>
+          <PicCon >   <PicImg src='LeviChen.png' /> </PicCon>
         </MainViewCon>
 
       </Container>
@@ -333,49 +361,56 @@ export default function Home() {
 
 
         <Content>
+
+
           <Title> Introduction</Title>
           <Intro>
             Levi is about to graduate from Digital Design and Development at BCIT. During the study, he learns how to design and build an application across platforms, separately web and mobile. As a result, he knows how to use UI/UX, front-end, and back-end skills that are Figma, HTML, CSS, JavaScript, react, and react-native in projects.
             Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience.
           </Intro>
 
-          <Title>Projects</Title>
+          <Title>Projects </Title>
           <Intro>
-           
+
           </Intro>
+
           <Projects >
 
             {project.map((o, i) => <>
-           
-                <animated.div style={styles}>
-            <ProjectItem>
-              <ProjectCard>
-                <ActionAreaCard
-                  key={i}
-                  title={o.title}
-                  time={o.time}
-                  codeTool={o.codeTool}
-                  src={o.src}
-                  routeTo={o.link}
-                  
-                />
-              </ProjectCard>
 
-                <ProjectIntro>
-                  <Intro2 onClick={()=>router.push(o.link)}> {o.title}</Intro2>
-                  <Intro> {o.intro}</Intro>
-                  <Intro> Enter</Intro>
-                </ProjectIntro>
-            </ProjectItem>
+              <animated.div style={styles} key={`o${i}`}>
+                <ProjectItem>
+                  <ProjectCard>
+                    <ActionAreaCard
+
+                      title={o.title}
+                      time={o.time}
+                      codeTool={o.codeTool}
+                      src={o.src}
+                      routeTo={o.link}
+                    />
+                  </ProjectCard>
+
+                  <ProjectIntro>
+                    <Intro2 onClick={() => router.push(o.link)}> {o.title}</Intro2>
+                    <Intro> {o.intro}</Intro>
+                    {/* <Intro> Enter</Intro> */}
+                    <ArrowButton>
+                      <ArrowDropUpRoundedIcon onClick={o.scrollUp} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={o.scrollDown} sx={{ fontSize: 50 }} />
+                    </ArrowButton>
+                  </ProjectIntro>
+                </ProjectItem>
               </animated.div>
-              
+
             </>)}
 
           </Projects>
-
+          <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
         </Content>
+
       </Container2>
-      <Rooter />
+      <Footer />
     </Wrraper>
   )
 }

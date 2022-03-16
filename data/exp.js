@@ -1,0 +1,48 @@
+export const exp = [
+    {
+        title:"Education",
+        schoolname:"Ming Chi University of Technology",
+        exp:"2000 – 2005", 
+        src:"./skill_icon/MCUT.png",
+        degreed:"Associate's degree, Industrial and Product Design"
+
+    },
+    {
+        title:"Education",
+        schoolname:"National Yunlin University of Science and Technology",
+        exp:"2005 – 2007", 
+        src:"./skill_icon/YUST.svg",
+        degreed:"Bachelor’s Degree, Industrial and Product Design"
+
+    },
+    {
+        title:"Education",
+        schoolname:"British Columbia Institute of Technology",
+        exp:"2020 – 2022", 
+        src:"./skill_icon/BCIT.png",
+        degreed:"Diploma, Digital design and development"
+
+    },
+    {
+        title:"WorkExperience",
+        schoolname:"White Box Design",
+        exp:"2015 – 2016", 
+        src:"./skill_icon/whitebox.png",
+        degreed:"Industrial Designer"
+
+    },
+    {
+        title:"WorkExperience",
+        schoolname:"Kingstar Business Group Corp",
+        exp:"2010 – 2019", 
+        src:"./skill_icon/kbg.gif",
+        degreed:"Industrial Designer"
+    },
+    {
+        title:"WorkExperience/internship",
+        schoolname:"HappyWay.ca",
+        exp:"2022 – 2022", 
+        src:"./skill_icon/happyway.png",
+        degreed:"FrontEnd Developer"
+    },
+]

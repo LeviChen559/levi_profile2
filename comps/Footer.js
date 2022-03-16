@@ -9,7 +9,7 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
-background-color:#E9C46A
+background-color:#c4cbd8
 `
 const Rootertext=styled.p`
 font-size:1.5rem;
@@ -18,7 +18,7 @@ font-weight:400;
 color:#E5E5E5
 `
 
-const Rooter =()=>{
+const Footer =()=>{
     var thisYesr = new Date()
     var year = thisYesr.getYear()+1900
 
@@ -28,4 +28,4 @@ return <RooterCon>
 </RooterCon>
 }
 
-export default Rooter
+export default Footer

@@ -12,7 +12,9 @@ export default function ActionAreaCard({
   src="covid.png",
   time="2022",
   routeTo="/",
-  codeTool
+  codeTool,
+  maxHeight="700",
+  height="275"
 }) {
   const router = useRouter()
 
@@ -22,11 +24,12 @@ export default function ActionAreaCard({
       <CardActionArea   onClick={()=>window.open(routeTo)} >
         <CardMedia 
           component="img"
-          height="250"
+          maxHeight={maxHeight}
+          height={height}
           image={src}
           alt={title}
-          objectFit="cover"
-          mt={2}
+       
+          
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
