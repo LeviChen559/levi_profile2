@@ -12,17 +12,19 @@ align-items:center;
 background-color:#E9C46A
 `
 const Rootertext=styled.p`
-font-size:2rem;
+font-size:1.5rem;
 font-family: 'Baumans', cursive;
 font-weight:400;
 color:#E5E5E5
 `
 
 const Rooter =()=>{
+    var thisYesr = new Date()
+    var year = thisYesr.getYear()+1900
 
-
+    console.log(year)
 return <RooterCon>
-<Rootertext> Ⓒ Levi Chen perfile website 2022 </Rootertext>
+<Rootertext> Ⓒ Levi Chen Profolio Website {year} </Rootertext>
 </RooterCon>
 }
 
