@@ -30,8 +30,11 @@ flex-direction:column;
 justify-content:flex-start;
 align-items:center;
 position:absolute;
-z-index:2:
-
+z-index:2;
+@media (max-width: 700px)
+{
+  width:85%
+}
 `
 const Container2 = styled.div`
 width:65%;
@@ -43,7 +46,10 @@ align-items:center;
 {
   width:70%
 }
-
+@media (max-width: 700px)
+{
+  width:85%
+}
 `
 const NavCon = styled.div`
 display:flex;
@@ -105,7 +111,7 @@ flex:4;
 flex-direction:column;
 justify-content:center;
 align-items:flex-start;
-height:50rem;
+height:40rem;
 // padding-left:15%
 
 `
@@ -115,7 +121,7 @@ flex:6;
 flex-direction:column;
 justify-content:center;
 align-items:flex-start;
-height:50rem;
+height:40rem;
 overflow:hidden;
 
 `
@@ -182,7 +188,19 @@ margin:.1rem;
   font-size:1rem;
 }
 `
-
+const Intro3 = styled.p`
+font-size:1.25rem;
+font-family: 'Baumans';
+font-weight:300;
+color:#7ca5b8;
+line-height: 2rem;
+margin:.1rem;
+width:70%;
+@media (max-width: 600px)
+{
+  font-size:1rem;
+}
+`
 const Intro1 = styled.div`
 font-size:5rem;
 font-family: 'Baumans';
@@ -220,6 +238,25 @@ font-family: 'Baumans';
 margin:5%;
 color:#E5E5E5;
 border-bottom:.2rem solid #E5E5E5;
+`
+const Title2 = styled.h1`
+font-family: 'Baumans';
+margin:2.5%;
+padding-bottom:1%;
+color:#7ca5b8;
+border-bottom:.2rem solid #7ca5b8;
+text-align:center;
+`
+const Introduction = styled.div`
+height:100%;
+background-color:#c4cbd8;
+margin-bottom:5rem;
+padding:5rem;
+width:100vw;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 `
 const Projects = styled.div`
 margin-top:5rem;
@@ -377,12 +414,14 @@ export default function Home() {
 
         <Content>
 
+            <Introduction>
 
-          <Title> Introduction</Title>
-          <Intro>
+          <Title2> Introduction</Title2>
+          <Intro3>
             Levi is about to graduate from Digital Design and Development at BCIT. During the study, he learns how to design and build an application across platforms, separately web and mobile. As a result, he knows how to use UI/UX, front-end, and back-end skills that are Figma, HTML, CSS, JavaScript, react, and react-native in projects.
             Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience.
-          </Intro>
+          </Intro3>
+            </Introduction>
 
           <Title>Projects </Title>
           <Intro>

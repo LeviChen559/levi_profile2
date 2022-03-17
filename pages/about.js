@@ -339,17 +339,17 @@ export default function Home() {
          in place of 'smooth' */
     });
   };
-  const scrollToTop3500 = () => {
+  const scrollToTop3800 = () => {
     window.scrollTo({
-      top: 3500,
+      top: 3800,
       behavior: 'smooth'
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
     });
   };
-  const scrollToTop4000 = () => {
+  const scrollToTop4500 = () => {
     window.scrollTo({
-      top: 4000,
+      top: 4500,
       behavior: 'smooth'
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
@@ -453,11 +453,11 @@ export default function Home() {
                 </animated.div>
               </>
               )}
+            </Tool>
               <ArrowButton>
                       <ArrowDropUpRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop3500} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
                     </ArrowButton>
-            </Tool>
             <Intro2> Design</Intro2>
             <Tool>
               {designtools.map((o, i) => <>
@@ -474,8 +474,8 @@ export default function Home() {
               )}
             </Tool>
               <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={scrollToTop3500} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop4000} sx={{ fontSize: 50 }} />
+                      <ArrowDropUpRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop4500} sx={{ fontSize: 50 }} />
                     </ArrowButton>
             <Intro2> Industril Design</Intro2>
             <Tool>

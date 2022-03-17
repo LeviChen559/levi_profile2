@@ -25,6 +25,9 @@ margin-right:2.5rem;
 }
 `
 const NavItemText = styled.div`
+display:flex;
+flex-direction:row;
+align-items:flex-end;
 font-size:1.5rem;
 width:5rem;
 font-family: 'Baumans', cursive;
