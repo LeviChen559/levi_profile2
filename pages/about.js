@@ -14,6 +14,7 @@ import ActionAreaCard from '../comps/ActionAreaCard'
 import ToolsCard from '../comps/ToolsCard'
 import { config } from 'react-spring'
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ExpCard from '../comps/ExpCard'
 const Wrraper = styled.div`
 width:100vw;
@@ -127,18 +128,20 @@ font-size:1.5rem;
 font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
-line-height: 120%;
+line-height: 2rem;
 margin:1rem;
 @media (max-width: 1960px)
 {
   font-size:1.25rem;
   margin:.75rem;
+  line-height: 1.75rem;
 }
 
 @media (max-width: 1400px)
 {
   font-size:1rem;
   margin:.5rem;
+  line-height: 1.5rem;
 }
 `
 
@@ -189,14 +192,17 @@ const Title2 = styled.h1`
 font-family: 'Baumans';
 margin:2.5%;
 padding-bottom:2%;
-color:#457b9d;
-border-bottom:.2rem solid #457b9d;
+color:#7ca5b8;
+border-bottom:.2rem solid #7ca5b8;
 text-align:center;
 `
 const Tools = styled.div`
 margin-bottom:20rem;
 width:100%;
 height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
 `
 const Tool = styled.div`
 margin-top:.5rem;
@@ -241,29 +247,52 @@ align-items:flex-start;
   padding-top:2rem;
 }
 `
-
-
 const Exprience = styled.div`
 height:100%;
 background-color:#c4cbd8;
 margin-bottom:5rem;
 width:100vw;
 display:flex;
-flex-direction:row;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 `
 const ExprienceCard = styled.div`
 width:70%;
 margin-top:5rem;
 margin-bottom:15rem;
+display:flex;
+flex-direction:column;
+flex-wrap:nowrap;
+justify-content:flex-end;
+align-items:flex-end;
 @media {max-width:600px}{
   width:90%;
 }
 `
-
+const ArrowButton = styled.div`
+width:100%;
+height:1rem;
+display:flex;
+flex-direction:row;
+justify-content:flex-end
+`
 export default function Home() {
   const router = useRouter()
   const [flip, set] = useState(false)
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let counter = count;
+    const interval = setInterval(() => {
+      if (counter >= exp.length) {
+        clearInterval(interval);
+      } else {
+        setCount(count => count + 1);
+        counter++; // local variable that this closure will see
+      }
+    }, 1000);
+    return () => clearInterval(interval); 
+  }, [exp]);
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
@@ -289,6 +318,38 @@ export default function Home() {
   const scrollToTop0 = () => {
     window.scrollTo({
       top: 0,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+  const scrollToTop1000 = () => {
+    window.scrollTo({
+      top: 1000,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+  const scrollToTop3000 = () => {
+    window.scrollTo({
+      top: 3000,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+  const scrollToTop3500 = () => {
+    window.scrollTo({
+      top: 3500,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+  const scrollToTop4000 = () => {
+    window.scrollTo({
+      top: 4000,
       behavior: 'smooth'
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
@@ -322,10 +383,10 @@ export default function Home() {
 
 
         <Content>
-          <Title> Who I Am ? </Title>
+          <Title> Who I Am ? </Title> 
           <ProjectItem>
             <ProjectCard>
-           
+
               <ActionAreaCard
                 title="Levi(Yi-Jen) Chen"
                 time="38"
@@ -346,15 +407,19 @@ export default function Home() {
                 Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience. During the process, he feels a lot of sense of achievement. He is at his best and puts all effort into the next position.
 
               </Intro>
-
+              <ArrowButton>
+                      <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
+                    </ArrowButton>
             </ProjectIntro>
           </ProjectItem>
           {/* <ExprienceBGC/> */}
           <Exprience>
+
+            <Title2>Education and Experience</Title2>
             <ExprienceCard>
 
-              <Title2>Education and Experience</Title2>
-              {exp.map((o, i) => <>
+              {exp.slice(0,count).map((o, i) => <>
 
                 <ExpCard
                   key={i}
@@ -367,6 +432,10 @@ export default function Home() {
               </>
               )}
             </ExprienceCard>
+            <ArrowButton>
+                      <ArrowDropUpRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+                    </ArrowButton>
           </Exprience>
           <Tools>
             <Title>Tools</Title>
@@ -384,6 +453,10 @@ export default function Home() {
                 </animated.div>
               </>
               )}
+              <ArrowButton>
+                      <ArrowDropUpRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop3500} sx={{ fontSize: 50 }} />
+                    </ArrowButton>
             </Tool>
             <Intro2> Design</Intro2>
             <Tool>
@@ -400,6 +473,10 @@ export default function Home() {
               </>
               )}
             </Tool>
+              <ArrowButton>
+                      <ArrowDropUpRoundedIcon onClick={scrollToTop3500} sx={{ fontSize: 50 }} />
+                      <ArrowDropDownRoundedIcon onClick={scrollToTop4000} sx={{ fontSize: 50 }} />
+                    </ArrowButton>
             <Intro2> Industril Design</Intro2>
             <Tool>
               {idtools.map((o, i) => <>

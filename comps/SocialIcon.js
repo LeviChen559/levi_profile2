@@ -4,6 +4,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaPinterest } from "react-icons/fa";
+import { useRouter } from 'next/router'
 
 const pulse = keyframes`
   0% {
@@ -53,15 +54,16 @@ const Pinterest =styled.div`
 }
 `
 const SocialIcon = () => {
+  const router=useRouter()
     return <SocialLinkCon>
 
-        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem' }}>
-           <Linkedin>
+        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem' }} >
+           <Linkedin onClick={()=>window.open("https://www.linkedin.com/in/yi-jen-levi-chen-87a1a2126/")}>
             <FaLinkedinIn />
            </Linkedin>
         </IconContext.Provider>
         <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem'  }}>
-           <Github>
+           <Github onClick={()=>window.open("https://github.com/LeviChen559")}>
             <FaGithub />
            </Github>
         </IconContext.Provider>

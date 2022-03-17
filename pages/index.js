@@ -8,7 +8,7 @@ import Footer from '../comps/Footer'
 import SocialIcon from '../comps/SocialIcon'
 import { useRouter } from 'next/router'
 import { useTransition, animated, useSpring } from '@react-spring/web'
-import { fontSize } from '@mui/system'
+import { config } from 'react-spring'
 import { project } from '../data/project'
 import ActionAreaCard from '../comps/ActionAreaCard'
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
@@ -170,12 +170,12 @@ margin-top:10rem;
   margin-letf:-10rem;
 }
 `
-const Intro = styled.div`
+const Intro = styled.p`
 font-size:1.25rem;
 font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
-line-height: 120%;
+line-height: 2rem;
 margin:.1rem;
 @media (max-width: 600px)
 {
@@ -219,7 +219,7 @@ const Title = styled.h1`
 font-family: 'Baumans';
 margin:5%;
 color:#E5E5E5;
-border-bottom:.25rem solid #E5E5E5;
+border-bottom:.2rem solid #E5E5E5;
 `
 const Projects = styled.div`
 margin-top:5rem;
@@ -271,15 +271,31 @@ export default function Home() {
   const router = useRouter()
   const ref = useRef([])
   const [items, set] = useState([])
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let counter = count;
+    const interval = setInterval(() => {
+      if (counter >= project.length) {
+        clearInterval(interval);
+      } else {
+        setCount(count => count + 1);
+        counter++; // local variable that this closure will see
+      
+      }
+    }, 1000);
+    return () => clearInterval(interval); 
+  }, [project]);
+  
   const styles = useSpring({
-    // loop: true,
+    loop: false,
     to: [
       { opacity: 1, marginLeft: "0rem" },
     ],
     from: { opacity: .75, marginLeft: "100rem" },
-    config: { duration: 2000 },
+    config: config.molasses,
   })
-
+  
   const transitions = useTransition(items, {
     from: {
       opacity: 0,
@@ -309,7 +325,6 @@ export default function Home() {
 
   useEffect(() => {
     reset()
-
     return () => ref.current.forEach(clearTimeout)
   }, [])
 
@@ -353,7 +368,7 @@ export default function Home() {
             <SocialIcon />
           </ShortIntroCon>
 
-          <PicCon >   <PicImg src='LeviChen.png' /> </PicCon>
+          <PicCon >   <PicImg src='LeviChen2.png' /> </PicCon>
         </MainViewCon>
 
       </Container>
@@ -375,14 +390,12 @@ export default function Home() {
           </Intro>
 
           <Projects >
-
-            {project.map((o, i) => <>
-
-              <animated.div style={styles} key={`o${i}`}>
-                <ProjectItem>
+            
+            {project.slice(0, count).map((o ,i) => <>
+              <animated.div style={styles} >
+                <ProjectItem key={i} >
                   <ProjectCard>
                     <ActionAreaCard
-
                       title={o.title}
                       time={o.time}
                       codeTool={o.codeTool}
@@ -401,11 +414,13 @@ export default function Home() {
                     </ArrowButton>
                   </ProjectIntro>
                 </ProjectItem>
+              
               </animated.div>
-
             </>)}
 
+          
           </Projects>
+
           <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
         </Content>
 

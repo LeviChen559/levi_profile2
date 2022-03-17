@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 const LogoCon = styled.div`
 display:flex;
@@ -47,8 +48,8 @@ height:2.25rem
 `
 
 const Logo= ()=>{
-
-return<LogoCon>
+    const router = useRouter()
+return<LogoCon  onClick={()=>router.push("/")}>
     <Logotext>Levi</Logotext>
     <Logoimg src='Logo.svg'/>
 </LogoCon>
