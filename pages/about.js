@@ -265,7 +265,7 @@ align-items:center;
 const ExprienceCard = styled.div`
 width:70%;
 // margin-top:5rem;
-margin-left:${(props)=>props.mr};
+margin-left:${(props) => props.mr};
 display:flex;
 flex-direction:column;
 // flex-wrap:nowrap;
@@ -282,9 +282,19 @@ display:flex;
 flex-direction:row;
 justify-content:center
 `
+const UpArrow = styled.div`
+&:hover{
+  opacity:.5
+}
+`
+const DownArrow = styled.div`
+&:hover{
+  opacity:.5
+}
+`
 export default function Home() {
   const router = useRouter()
-  
+
   const [flip, set] = useState(false)
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -297,7 +307,7 @@ export default function Home() {
         counter++; // local variable that this closure will see
       }
     }, 1000);
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [exp]);
   const props2 = useSpring({
     to: { marginLeft: "15rem" },
@@ -305,19 +315,19 @@ export default function Home() {
     reset: false,
     reverse: false,
     // delay: 100,
-    config:{tension:170,duration:3000},
+    config: { tension: 170, duration: 3000 },
     onRest: () => set(!flip),
   })
   const props = useSpring({
     to: [{ opacity: .5 },
-     
-      { opacity: 1 }
+
+    { opacity: 1 }
     ],
     from: { opacity: 0 },
     reset: false,
     reverse: false,
-    delay:5000,
-    config:{duration: 1000},
+    delay: 5000,
+    config: { duration: 1000 },
     onRest: () => set(!flip),
   })
 
@@ -400,7 +410,7 @@ export default function Home() {
 
 
         <Content>
-          <Title> Who I Am ? </Title> 
+          <Title> Who I Am ? </Title>
           <ProjectItem>
             <ProjectCard >
 
@@ -426,34 +436,45 @@ export default function Home() {
               </Intro>
             </ProjectIntro>
           </ProjectItem>
-              <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
-                    </ArrowButton>
+          <ArrowButton>
+            <UpArrow>
+
+              <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+            </UpArrow>
+            <DownArrow>
+
+              <ArrowDropDownRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
+            </DownArrow>
+          </ArrowButton>
           {/* <ExprienceBGC/> */}
           <Exprience>
 
             <Title2>Education and Experience</Title2>
 
-              {exp.slice(0,count).map((o, i) => <>
-                <animated.div style={props2}>
-            <ExprienceCard >
-                <ExpCard
-                  key={i}
-                  title={o.title}
-                  schoolname={o.schoolname}
-                  src={o.src}
-                  exp={o.exp}
-                  degreed={o.degreed}
-                />
-            </ExprienceCard>
-            </animated.div>
-              </>
-              )}
+            {exp.slice(0, count).map((o, i) => <>
+              <animated.div style={props2}>
+                <ExprienceCard >
+                  <ExpCard
+                    key={i}
+                    title={o.title}
+                    schoolname={o.schoolname}
+                    src={o.src}
+                    exp={o.exp}
+                    degreed={o.degreed}
+                  />
+                </ExprienceCard>
+              </animated.div>
+            </>
+            )}
             <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
-                    </ArrowButton>
+              <UpArrow>
+
+                <ArrowDropUpRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
+              </UpArrow>
+              <DownArrow>
+                <ArrowDropDownRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+              </DownArrow>
+            </ArrowButton>
           </Exprience>
           <Tools>
             <Title>Tools</Title>
@@ -472,10 +493,15 @@ export default function Home() {
               </>
               )}
             </Tool>
-              <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
-                    </ArrowButton>
+            <ArrowButton>
+              <UpArrow>
+                <ArrowDropUpRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+              </UpArrow>
+              <DownArrow>
+
+                <ArrowDropDownRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
+              </DownArrow>
+            </ArrowButton>
             <Intro2> Design</Intro2>
             <Tool>
               {designtools.map((o, i) => <>
@@ -491,28 +517,35 @@ export default function Home() {
               </>
               )}
             </Tool>
-              <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={scrollToTop4500} sx={{ fontSize: 50 }} />
-                    </ArrowButton>
+            <ArrowButton>
+              <UpArrow>
+
+                <ArrowDropUpRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
+              </UpArrow>
+              <DownArrow>
+                <ArrowDropDownRoundedIcon onClick={scrollToTop4500} sx={{ fontSize: 50 }} />
+              </DownArrow>
+            </ArrowButton>
             <Intro2> Industril Design</Intro2>
             <Tool>
               {idtools.map((o, i) => <>
                 <animated.div style={props}>
-                <ToolsCard
-                  key={i}
-                  title={o.title}
-                  toolname={o.toolnaame}
-                  src={o.src}
-                  exp={o.exp}
-                />
+                  <ToolsCard
+                    key={i}
+                    title={o.title}
+                    toolname={o.toolnaame}
+                    src={o.src}
+                    exp={o.exp}
+                  />
                 </animated.div>
               </>
               )}
             </Tool>
           </Tools>
+          <UpArrow>
 
-          <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+            <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+          </UpArrow>
         </Content>
       </Container2>
       <Footer />

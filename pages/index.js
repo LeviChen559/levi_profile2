@@ -311,7 +311,17 @@ width:100%;
 height:1rem;
 display:flex;
 flex-direction:row;
-justify-content:flex-end
+justify-content:flex-end;
+`
+const UpArrow = styled.div`
+&:hover{
+  opacity:.5
+}
+`
+const DownArrow = styled.div`
+&:hover{
+  opacity:.5
+}
 `
 export default function Home() {
   const router = useRouter()
@@ -327,22 +337,22 @@ export default function Home() {
       } else {
         setCount(count => count + 1);
         counter++; // local variable that this closure will see
-      
+
       }
     }, 1000);
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [project]);
-  
+
   const styles = useSpring({
     loop: false,
     to: [
       { opacity: 1, marginLeft: "0rem" },
     ],
     from: { opacity: .75, marginLeft: "100rem" },
-    config: {duration: 3000, friction: 100,tension:100} 
-    
+    config: { duration: 3000, friction: 100, tension: 100 }
+
   })
-  
+
   const transitions = useTransition(items, {
     from: {
       opacity: 0,
@@ -424,14 +434,14 @@ export default function Home() {
 
         <Content>
 
-            <Introduction>
+          <Introduction>
 
-          <Title2> Introduction</Title2>
-          <Intro3>
-            Levi is about to graduate from Digital Design and Development at BCIT. During the study, he learns how to design and build an application across platforms, separately web and mobile. As a result, he knows how to use UI/UX, front-end, and back-end skills that are Figma, HTML, CSS, JavaScript, react, and react-native in projects.
-            Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience.
-          </Intro3>
-            </Introduction>
+            <Title2> Introduction</Title2>
+            <Intro3>
+              Levi is about to graduate from Digital Design and Development at BCIT. During the study, he learns how to design and build an application across platforms, separately web and mobile. As a result, he knows how to use UI/UX, front-end, and back-end skills that are Figma, HTML, CSS, JavaScript, react, and react-native in projects.
+              Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience.
+            </Intro3>
+          </Introduction>
 
           <Title>Projects </Title>
           <Intro>
@@ -439,8 +449,8 @@ export default function Home() {
           </Intro>
 
           <Projects >
-            
-            {project.slice(0, count).map((o ,i) => <>
+
+            {project.slice(0, count).map((o, i) => <>
               <animated.div style={styles} key={i} >
                 <ProjectItem  >
                   <ProjectCard>
@@ -458,19 +468,25 @@ export default function Home() {
                     <Intro> {o.intro}</Intro>
                     {/* <Intro> Enter</Intro> */}
                     <ArrowButton>
-                      <ArrowDropUpRoundedIcon onClick={o.scrollUp} sx={{ fontSize: 50 }} />
-                      <ArrowDropDownRoundedIcon onClick={o.scrollDown} sx={{ fontSize: 50 }} />
+                      <UpArrow>
+                        <ArrowDropUpRoundedIcon onClick={o.scrollUp} sx={{ fontSize: 50 }} />
+                      </UpArrow>
+                      <DownArrow>
+                        <ArrowDropDownRoundedIcon onClick={o.scrollDown} sx={{ fontSize: 50 }} />
+                      </DownArrow>
                     </ArrowButton>
                   </ProjectIntro>
                 </ProjectItem>
-              
+
               </animated.div>
             </>)}
 
-          
+
           </Projects>
 
-          <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+          <UpArrow>
+                        <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+                      </UpArrow>
         </Content>
 
       </Container2>
