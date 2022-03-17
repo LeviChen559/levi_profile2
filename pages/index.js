@@ -74,6 +74,10 @@ display: block;
 {
   height:35rem;
 }
+@media (max-width: 600px)
+{
+  height:25rem;
+}
 `
 const MainViewCon = styled.div`
 width:100%;
@@ -92,6 +96,10 @@ overflow:hidden;
 @media (max-width: 1400px)
 {
   height:35rem;
+}
+@media (max-width: 600px)
+{
+  height:25rem;
 }
 `
 const Content = styled.div`
@@ -131,7 +139,7 @@ width:45rem;
 margin-top:9.5rem;
 position:absolute;
 z-index:2;
-margin-left:-2.5rem;
+margin-left:0rem;
 @media (max-width: 1960px)
 {
   width:42.5rem;
@@ -140,25 +148,25 @@ margin-left:-2.5rem;
 @media (max-width: 1600px)
 {
   width:35rem;
-  margin-top:7.5rem;
+  margin-top:10rem;
   margin-left:-5rem;
 }
 @media (max-width: 1200px)
 {
   width:27.5rem;
-  margin-top:7.5rem;
-  margin-left:-7.5rem;
+  margin-top:10rem;
+  margin-left:-5rem;
 }
 @media (max-width: 800px)
 {
   width:22.5rem;
-  margin-top:10rem;
-  margin-left:-7.5rem;
+  margin-top:15rem;
+  margin-left:-5rem;
 }
 @media (max-width: 600px)
 {
-  width:20rem;
-  margin-top:17.5rem;
+  width:15rem;
+  margin-top:15rem;
   margin-left:-5rem;
 }
 `
@@ -199,6 +207,7 @@ width:70%;
 @media (max-width: 600px)
 {
   font-size:1rem;
+  width:100%;
 }
 `
 const Intro1 = styled.div`
@@ -241,7 +250,7 @@ border-bottom:.2rem solid #E5E5E5;
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
-margin:2.5%;
+margin-top:1%;
 padding-bottom:1%;
 color:#7ca5b8;
 border-bottom:.2rem solid #7ca5b8;
@@ -383,7 +392,7 @@ export default function Home() {
           content="This portfolio includes web and mobile development projects, especially with MongoDB, Express, React, and Node. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022 who enthuse in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. " />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <MainView src='ocean.svg' />
+      <MainView src='black.png' />
       <Container>
         <NavCon>
           <NavBar />

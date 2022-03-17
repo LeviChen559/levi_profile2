@@ -35,7 +35,10 @@ height:3.5rem;
 {
   width:9rem;
 }
-
+@media (max-width: 600px)
+{
+  width:9rem;
+}
 `
 const Linkedin =styled.div`
 &:hover{
@@ -57,7 +60,7 @@ const SocialIcon = () => {
   const router=useRouter()
     return <SocialLinkCon>
 
-        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem' }} >
+        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2em' }} >
            <Linkedin onClick={()=>window.open("https://www.linkedin.com/in/yi-jen-levi-chen-87a1a2126/")}>
             <FaLinkedinIn />
            </Linkedin>
