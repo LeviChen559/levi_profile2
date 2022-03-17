@@ -16,6 +16,8 @@ import { config } from 'react-spring'
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ExpCard from '../comps/ExpCard'
+import * as Scroll from 'react-scroll';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 const Wrraper = styled.div`
 width:100vw;
 height:100%;
@@ -23,7 +25,7 @@ display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:#7ca5b8;
+background-color:#859AA7;
 `
 const Container = styled.div`
 width:60%;
@@ -100,7 +102,7 @@ const Content = styled.div`
 display:flex;
 width:90%;
 height:100%;
-background-color:#7ca5b8;
+// background-color:#7ca5b8;
 margin:0;
 flex-direction:column;
 justify-content:flex-start;
@@ -254,7 +256,7 @@ align-items:flex-start;
 `
 const Exprience = styled.div`
 height:100%;
-background-color:#c4cbd8;
+background-color:#E5E5E5;
 margin-bottom:5rem;
 width:100vw;
 display:flex;
@@ -269,8 +271,8 @@ margin-left:${(props) => props.mr};
 display:flex;
 flex-direction:column;
 // flex-wrap:nowrap;
-justify-content:flex-end;
-align-items:flex-end;
+justify-content:center;
+align-items:center;
 @media {max-width:600px}{
   width:90%;
 }
@@ -294,7 +296,6 @@ const DownArrow = styled.div`
 `
 export default function Home() {
   const router = useRouter()
-
   const [flip, set] = useState(false)
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -310,7 +311,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [exp]);
   const props2 = useSpring({
-    to: { marginLeft: "15rem" },
+    to: { marginLeft: "7.5rem" },
     from: { marginLeft: "100rem" },
     reset: false,
     reverse: false,
@@ -342,7 +343,7 @@ export default function Home() {
     }
   };
 
-  const scrollToTop0 = () => {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -350,38 +351,7 @@ export default function Home() {
          in place of 'smooth' */
     });
   };
-  const scrollToTop1000 = () => {
-    window.scrollTo({
-      top: 1000,
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
-  const scrollToTop3000 = () => {
-    window.scrollTo({
-      top: 3000,
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
-  const scrollToTop3800 = () => {
-    window.scrollTo({
-      top: 3800,
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
-  const scrollToTop4500 = () => {
-    window.scrollTo({
-      top: 4500,
-      behavior: 'smooth'
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
+
   // const screenSize=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   // console.log(screenSize)
   return (
@@ -410,16 +380,16 @@ export default function Home() {
 
 
         <Content>
-          <Title> Who I Am ? </Title>
+          <Title name="Introduction"> Who I Am ? </Title>
           <ProjectItem>
             <ProjectCard >
-
               <ActionAreaCard
                 title="Levi(Yi-Jen) Chen"
                 time="38"
                 src="levi.png"
                 height="375"
                 maxHeight='700'
+                
               />
             </ProjectCard>
 
@@ -439,20 +409,21 @@ export default function Home() {
           <ArrowButton>
             <UpArrow>
 
-              <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+              <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
             </UpArrow>
             <DownArrow>
-
-              <ArrowDropDownRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
-            </DownArrow>
+              <Link activeClass="active" to="Experience" spy={true} smooth={true}> 
+                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
+                </Link>
+              </DownArrow>
           </ArrowButton>
           {/* <ExprienceBGC/> */}
-          <Exprience>
+          <Exprience name="Experience">
 
             <Title2>Education and Experience</Title2>
 
             {exp.slice(0, count).map((o, i) => <>
-              <animated.div style={props2}>
+              <animated.div style={props2} pos={o.pos}>
                 <ExprienceCard >
                   <ExpCard
                     key={i}
@@ -461,25 +432,29 @@ export default function Home() {
                     src={o.src}
                     exp={o.exp}
                     degreed={o.degreed}
+                    pos={o.pos}
                   />
                 </ExprienceCard>
               </animated.div>
             </>
             )}
             <ArrowButton>
-              <UpArrow>
-
-                <ArrowDropUpRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
+            <UpArrow>
+                <Link activeClass="active" to="Introduction" spy={true} smooth={true}> 
+                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50, color:"#859AA7"}} />
+                </Link>
               </UpArrow>
               <DownArrow>
-                <ArrowDropDownRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+              <Link activeClass="active" to="Development" spy={true} smooth={true}> 
+                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 ,color:"#859AA7"}}  />
+                </Link>
               </DownArrow>
             </ArrowButton>
           </Exprience>
           <Tools>
             <Title>Tools</Title>
-            <Intro2> Development</Intro2>
-            <Tool>
+            <Intro2 name="Development"> Development</Intro2>
+            <Tool >
               {webtools.map((o, i) => <>
                 <animated.div style={props}>
                   <ToolsCard
@@ -494,16 +469,19 @@ export default function Home() {
               )}
             </Tool>
             <ArrowButton>
-              <UpArrow>
-                <ArrowDropUpRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
+            <UpArrow>
+                <Link activeClass="active" to="Experience" spy={true} smooth={true}> 
+                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
+                </Link>
               </UpArrow>
               <DownArrow>
-
-                <ArrowDropDownRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
+              <Link activeClass="active" to="Design" spy={true} smooth={true}> 
+                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
+                </Link>
               </DownArrow>
             </ArrowButton>
-            <Intro2> Design</Intro2>
-            <Tool>
+            <Intro2 name="Design"> Design</Intro2>
+            <Tool >
               {designtools.map((o, i) => <>
                 <animated.div style={props}>
                   <ToolsCard
@@ -519,15 +497,18 @@ export default function Home() {
             </Tool>
             <ArrowButton>
               <UpArrow>
-
-                <ArrowDropUpRoundedIcon onClick={scrollToTop3800} sx={{ fontSize: 50 }} />
+                <Link activeClass="active" to="Development" spy={true} smooth={true}> 
+                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
+                </Link>
               </UpArrow>
               <DownArrow>
-                <ArrowDropDownRoundedIcon onClick={scrollToTop4500} sx={{ fontSize: 50 }} />
+              <Link activeClass="active" to="IndustrialDesign" spy={true} smooth={true}> 
+                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
+                </Link>
               </DownArrow>
             </ArrowButton>
-            <Intro2> Industril Design</Intro2>
-            <Tool>
+            <Intro2 name="IndustrialDesign"> Industrial Design</Intro2>
+            <Tool >
               {idtools.map((o, i) => <>
                 <animated.div style={props}>
                   <ToolsCard
@@ -544,7 +525,7 @@ export default function Home() {
           </Tools>
           <UpArrow>
 
-            <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+            <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
           </UpArrow>
         </Content>
       </Container2>

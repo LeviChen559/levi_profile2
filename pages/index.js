@@ -13,6 +13,8 @@ import { project } from '../data/project'
 import ActionAreaCard from '../comps/ActionAreaCard'
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import * as Scroll from 'react-scroll';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 const Wrraper = styled.div`
 width:100vw;
 height:100%;
@@ -20,7 +22,8 @@ display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:#7ca5b8;
+background-color:#859AA7;
+
 `
 const Container = styled.div`
 width:60%;
@@ -106,7 +109,7 @@ const Content = styled.div`
 display:flex;
 width:90%;
 height:100%;
-background-color:#7ca5b8;
+// background-color:#7ca5b8;
 margin:0;
 flex-direction:column;
 justify-content:flex-start;
@@ -166,8 +169,8 @@ margin-left:0rem;
 @media (max-width: 600px)
 {
   width:15rem;
-  margin-top:15rem;
-  margin-left:-5rem;
+  margin-top:10rem;
+  margin-left:0rem;
 }
 `
 const ColorBlock = styled.img`
@@ -194,6 +197,7 @@ margin:.1rem;
 @media (max-width: 600px)
 {
   font-size:1rem;
+  line-height: 1.5rem;
 }
 `
 const Intro3 = styled.p`
@@ -202,12 +206,18 @@ font-family: 'Baumans';
 font-weight:300;
 color:#7ca5b8;
 line-height: 2rem;
-margin:.1rem;
 width:70%;
+@media (max-width: 1000px)
+{
+  font-size:1.1rem;
+  line-height: 1.5rem;
+  width:75%;
+}
 @media (max-width: 600px)
 {
-  font-size:1rem;
-  width:100%;
+  font-size:.9rem;
+  line-height: 1.2rem;
+  width:110%;
 }
 `
 const Intro1 = styled.div`
@@ -244,31 +254,51 @@ margin-bottom:1rem;
 `
 const Title = styled.h1`
 font-family: 'Baumans';
-margin:5%;
+margin:10%;
 color:#E5E5E5;
-border-bottom:.2rem solid #E5E5E5;
+// border-bottom:.2rem solid #E5E5E5;
+text-align:center
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
-margin-top:1%;
-padding-bottom:1%;
 color:#7ca5b8;
-border-bottom:.2rem solid #7ca5b8;
+// border-bottom:.2rem solid #7ca5b8;
 text-align:center;
+@media (max-width: 600px)
+{
+  font-size:1.25rem
+}
 `
 const Introduction = styled.div`
-height:100%;
-background-color:#c4cbd8;
-margin-bottom:5rem;
+height:32.5rem;
+background-color:#E5E5E5;
 padding:5rem;
+padding-bottom:7.5rem;
 width:100vw;
+position:absolute;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+clip-path: polygon(0 0%, 100% 25%, 100% 100%, 0% 75%);
+margin-top:-9rem;
+z-index:3;
+@media (max-width: 1400px)
+{
+  height:27.5rem;
+  margin-top:-5rem;
+  clip-path: polygon(0 0%, 100% 15%, 100% 100%, 0% 85%);
+}
+@media (max-width: 600px)
+{
+  height:25rem;
+  margin-top:-4rem;
+  clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 90%);
+}
+
 `
 const Projects = styled.div`
-margin-top:5rem;
+margin-top:20rem;
 margin-bottom:20rem;
 display:flex;
 flex-direction:column;
@@ -385,10 +415,11 @@ export default function Home() {
     return () => ref.current.forEach(clearTimeout)
   }, [])
 
-  const scrollToTop0 = () => {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
+      duration: 3000,
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
     });
@@ -403,13 +434,13 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <MainView src='black.png' />
-      <Container>
+      <Container name="Top">
         <NavCon>
           <NavBar />
         </NavCon>
         <MainViewCon>
           <ShortIntroCon>
-            <Intro1>Hello, I am Levi.</Intro1>
+            <Intro1 >Hello, I am Levi.</Intro1>
             <Intro>
               {transitions(({ innerHeight, ...rest }, item) => (
                 <animated.div className={styles.transitionsItem} style={rest} onClick={reset}>
@@ -443,16 +474,16 @@ export default function Home() {
             </Intro3>
           </Introduction>
 
+
+          <Projects >
           <Title>Projects </Title>
           <Intro>
 
           </Intro>
 
-          <Projects >
-
             {project.slice(0, count).map((o, i) => <>
               <animated.div style={styles} key={i} >
-                <ProjectItem  >
+                <ProjectItem name={o.name} >
                   <ProjectCard>
                     <ActionAreaCard
                       title={o.title}
@@ -469,11 +500,16 @@ export default function Home() {
                     {/* <Intro> Enter</Intro> */}
                     <ArrowButton>
                       <UpArrow>
-                        <ArrowDropUpRoundedIcon onClick={o.scrollUp} sx={{ fontSize: 50 }} />
+                <Link activeClass="active" to={o.back} spy={true} smooth={true}>
+                        <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
+                     </Link>
                       </UpArrow>
+                      {o.next!==""?
                       <DownArrow>
-                        <ArrowDropDownRoundedIcon onClick={o.scrollDown} sx={{ fontSize: 50 }} />
-                      </DownArrow>
+                      <Link activeClass="active" to={o.next} spy={true} smooth={true}>
+                        <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }} />
+                        </Link>
+                      </DownArrow>:null}
                     </ArrowButton>
                   </ProjectIntro>
                 </ProjectItem>
@@ -485,7 +521,7 @@ export default function Home() {
           </Projects>
 
           <UpArrow>
-                        <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
+                        <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
                       </UpArrow>
         </Content>
 

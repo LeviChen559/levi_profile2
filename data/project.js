@@ -1,4 +1,4 @@
-const scrollToTop0 = () =>{
+const scrollToTop = () =>{
     window.scrollTo({
       top: 0, 
       behavior: 'smooth'
@@ -65,19 +65,21 @@ const scrollToTop200 = () =>{
   };
 
 export const project =
-    [{
+    [{  name:"Echo",
         title: "Echo",
         time: "Feb, 2022- March, 2022",
         members: "2",
         src: "echo2.png",
         codeTool: "React(Next.js), Javascript, Mongodb, Node.js, Git",
         link: "https://echo-sage.vercel.app/",
-        scrollUp:scrollToTop0,
+        scrollUp:scrollToTop,
         scrollDown:scrollToTop1400,
+        back:"Top",
+        next:"Buzzy Bee",
         intro: "This is a reader social media. In the application, each reader can leave and find comments about books. Also, they can record books to their reading list. You may see other people’s reading lists, so you can request a friend connection or subscribe to their new comments. We provide a platform where readers can share their thoughts and find the same or different ideas. The way may give you the other aspect of view to read books."
         
     },
-    {
+    {    name:"Buzzy Bee",
         title: "Buzzy Bee",
         time: "Sep, 2021- Dec, 2021",
         members: "5",
@@ -86,9 +88,11 @@ export const project =
         codeTool: "React Native(Expo.js), Javascript, Firebase, , Git",
         scrollUp:scrollToTop800,
         scrollDown:scrollToTop1800,
+        back:"Echo",
+        next:"Lebrary",
         intro: "The app helps students to organize their school life. There are three main features in the app, separately schedule, group and meeting. The schedule helps them arrange their time. The group feature brings better communication. The meeting feature solves the pain of group meetings since setting a perfect time for a discussion that fits members is troublesome."
     },
-    {
+    {   name:"Lebrary",
         title: "Lebrary",
         time: "Feb, 2022- Feb, 2022",
         members: "5",
@@ -97,9 +101,11 @@ export const project =
         codeTool: "React Native(Expo.js), Javascript, Git",
         scrollUp:scrollToTop1400,
         scrollDown:scrollToTop2200,
+        back:"Buzzy Bee",
+        next:"covid",
         intro: "The app helps students to organize their school life. There are three main features in the app, separately schedule, group and meeting. The schedule helps them arrange their time. The group feature brings better communication. The meeting feature solves the pain of group meetings since setting a perfect time for a discussion that fits members is troublesome."
     },
-    {
+    {   name:"covid",
         title: "Covid-action Website",
         time: "Jan, 2021- May, 2021",
         members: "3",
@@ -108,8 +114,11 @@ export const project =
         codeTool: "React(Next.js), Javascript ,Git",
         scrollUp:scrollToTop1800,
         scrollDown:scrollToTop2600,
+        back:"Lebrary",
+        next:"Noti",
         intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic.."
     }, {
+        name:"Noti",
         title: "Noti app Website",
         time: "Jan, 2021- May, 2021",
         members: "3",
@@ -118,6 +127,8 @@ export const project =
         codeTool: "React(Next.js), Javascript ,Git",
         scrollUp:scrollToTop2200,
         scrollDown:scrollToTop3000,
+        back:"covid",
+        next:"",
         intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic.."
     },
 
