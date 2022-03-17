@@ -330,7 +330,8 @@ export default function Home() {
       { opacity: 1, marginLeft: "0rem" },
     ],
     from: { opacity: .75, marginLeft: "100rem" },
-    config: config.molasses,
+    config: {duration: 3000, friction: 100,tension:100} 
+    
   })
   
   const transitions = useTransition(items, {
@@ -431,8 +432,8 @@ export default function Home() {
           <Projects >
             
             {project.slice(0, count).map((o ,i) => <>
-              <animated.div style={styles} >
-                <ProjectItem key={i} >
+              <animated.div style={styles} key={i} >
+                <ProjectItem  >
                   <ProjectCard>
                     <ActionAreaCard
                       title={o.title}

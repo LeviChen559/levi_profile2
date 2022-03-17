@@ -1,3 +1,8 @@
+
+import styled from "@emotion/styled"
+const Word=styled.span`
+word-wrap: break-word;
+`
 export const exp = [
     {
         title:"Education",
@@ -9,7 +14,7 @@ export const exp = [
     },
     {
         title:"Education",
-        schoolname:"National Yunlin University of Science and Technology",
+        schoolname:<>National Yunlin University of Science<br/> and Technology</>,
         exp:"2005 – 2007", 
         src:"./skill_icon/YUST.svg",
         degreed:"Bachelor’s Degree, Industrial and Product Design"

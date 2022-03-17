@@ -27,15 +27,17 @@ background-color:#7ca5b8;
 `
 const Container = styled.div`
 width:60%;
-height:20%;
+height:60%;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
 position:absolute;
-z-index:2:
-
-`
+z-index:2;
+@media (max-width: 700px)
+{
+  width:85%
+}`
 const Container2 = styled.div`
 width:65%;
 display:flex;
@@ -46,7 +48,10 @@ align-items:center;
 {
   width:70%
 }
-
+@media (max-width: 700px)
+{
+  width:85%
+}
 `
 const NavCon = styled.div`
 display:flex;
@@ -259,11 +264,11 @@ align-items:center;
 `
 const ExprienceCard = styled.div`
 width:70%;
-margin-top:5rem;
-margin-bottom:15rem;
+// margin-top:5rem;
+margin-left:${(props)=>props.mr};
 display:flex;
 flex-direction:column;
-flex-wrap:nowrap;
+// flex-wrap:nowrap;
 justify-content:flex-end;
 align-items:flex-end;
 @media {max-width:600px}{
@@ -279,6 +284,7 @@ justify-content:center
 `
 export default function Home() {
   const router = useRouter()
+  
   const [flip, set] = useState(false)
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -293,14 +299,26 @@ export default function Home() {
     }, 1000);
     return () => clearInterval(interval); 
   }, [exp]);
+  const props2 = useSpring({
+    to: { marginLeft: "15rem" },
+    from: { marginLeft: "100rem" },
+    reset: false,
+    reverse: false,
+    // delay: 100,
+    config:{tension:170,duration:3000},
+    onRest: () => set(!flip),
+  })
   const props = useSpring({
-    to: { opacity: 1 },
+    to: [{ opacity: .5 },
+     
+      { opacity: 1 }
+    ],
     from: { opacity: 0 },
     reset: false,
     reverse: false,
-    delay: 200,
-    config: 3000,
-    // onRest: () => set(!flip),
+    delay:5000,
+    config:{duration: 1000},
+    onRest: () => set(!flip),
   })
 
   const [visible, setVisible] = useState(false)
@@ -313,7 +331,6 @@ export default function Home() {
       setVisible(false)
     }
   };
-
 
   const scrollToTop0 = () => {
     window.scrollTo({
@@ -385,7 +402,7 @@ export default function Home() {
         <Content>
           <Title> Who I Am ? </Title> 
           <ProjectItem>
-            <ProjectCard>
+            <ProjectCard >
 
               <ActionAreaCard
                 title="Levi(Yi-Jen) Chen"
@@ -407,20 +424,20 @@ export default function Home() {
                 Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience. During the process, he feels a lot of sense of achievement. He is at his best and puts all effort into the next position.
 
               </Intro>
+            </ProjectIntro>
+          </ProjectItem>
               <ArrowButton>
                       <ArrowDropUpRoundedIcon onClick={scrollToTop0} sx={{ fontSize: 50 }} />
                       <ArrowDropDownRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
                     </ArrowButton>
-            </ProjectIntro>
-          </ProjectItem>
           {/* <ExprienceBGC/> */}
           <Exprience>
 
             <Title2>Education and Experience</Title2>
-            <ExprienceCard>
 
               {exp.slice(0,count).map((o, i) => <>
-
+                <animated.div style={props2}>
+            <ExprienceCard >
                 <ExpCard
                   key={i}
                   title={o.title}
@@ -429,9 +446,10 @@ export default function Home() {
                   exp={o.exp}
                   degreed={o.degreed}
                 />
+            </ExprienceCard>
+            </animated.div>
               </>
               )}
-            </ExprienceCard>
             <ArrowButton>
                       <ArrowDropUpRoundedIcon onClick={scrollToTop1000} sx={{ fontSize: 50 }} />
                       <ArrowDropDownRoundedIcon onClick={scrollToTop3000} sx={{ fontSize: 50 }} />
@@ -480,7 +498,7 @@ export default function Home() {
             <Intro2> Industril Design</Intro2>
             <Tool>
               {idtools.map((o, i) => <>
-
+                <animated.div style={props}>
                 <ToolsCard
                   key={i}
                   title={o.title}
@@ -488,6 +506,7 @@ export default function Home() {
                   src={o.src}
                   exp={o.exp}
                 />
+                </animated.div>
               </>
               )}
             </Tool>
