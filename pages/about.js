@@ -272,10 +272,10 @@ align-items:flex-end;
 `
 const ArrowButton = styled.div`
 width:100%;
-height:1rem;
+height:5rem;
 display:flex;
 flex-direction:row;
-justify-content:flex-end
+justify-content:center
 `
 export default function Home() {
   const router = useRouter()
