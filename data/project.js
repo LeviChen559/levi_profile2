@@ -198,7 +198,7 @@ export const webtools =
             src: "./skill_icon/firebase-icon.png"
         }, {
             title: "Database",
-            toolnaame: "mongodb",
+            toolnaame: "Mongodb",
             exp: "1/2 year",
             src: "./skill_icon/mongodb-icon.png"
         },
@@ -228,7 +228,7 @@ export const webtools =
             title: "Graphic",
             toolnaame: "Photshop",
             exp: "10 years +",
-            src: "./skill_icon/ps-icon.png"
+            src: "./skill_icon/PS-icon.png"
         },
         {
             title: "Animation",
