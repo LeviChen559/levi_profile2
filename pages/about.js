@@ -189,18 +189,18 @@ text-align:center;
 `
 const Title = styled.h1`
 font-family: 'Baumans';
-margin:2.5%;
+margin:5%;
 padding-bottom:2%;
 color:#E5E5E5;
-border-bottom:.2rem solid #E5E5E5;
+
 text-align:center;
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
-margin:2.5%;
+margin:5%;
 padding-bottom:2%;
 color:#7ca5b8;
-border-bottom:.2rem solid #7ca5b8;
+
 text-align:center;
 `
 const Tools = styled.div`
@@ -258,11 +258,13 @@ const Exprience = styled.div`
 height:100%;
 background-color:#E5E5E5;
 margin-bottom:5rem;
+padding:7.5rem 0 7.55rem 0;
 width:100vw;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 95%);
 `
 const ExprienceCard = styled.div`
 width:70%;
@@ -452,7 +454,7 @@ export default function About() {
             </ArrowButton>
           </Exprience>
           <Tools>
-            <Title>Tools</Title>
+            <Title>Skills</Title>
             <Intro2 name="Development"> Development</Intro2>
             <Tool >
               {webtools.map((o, i) => <>

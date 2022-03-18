@@ -8,10 +8,25 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
-width:5rem;
+// width:5rem;
 margin-right:2.5rem;
-&:hover {
-    color: lightblue;
+&:hover:before{
+    backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+  }
+  &:hover{
+    backface-visibility: hidden;
+    color:#859AA7;
+    width:6rem;
+    border-bottom:2px solid  #859AA7;
+    transition: all 800ms ease-in-out;
   }
 @media (max-width: 1400px)
 {
@@ -32,8 +47,8 @@ font-size:1.5rem;
 width:5rem;
 font-family: 'Baumans', cursive;
 margin-left:.5rem;
-&:hover {
-    color: lightblue;
+&:hover{
+    color:#859AA7;
   }
 @media (max-width: 1400px)
 {
@@ -49,9 +64,9 @@ flex-dirextion:row;
 width:6.5rem;
 display:${(props) => props.hdisplay};
 color: ${(props) => props.navcolor};
-&:hover {
-    color: lightblue;
-    border-bottom:2px solid 
+&:hover{
+    
+    color:#859AA7;
   }
 @media (max-width: 780px)
 {
@@ -63,12 +78,12 @@ const UserIcon = styled.div`
 flex-dirextion:row;
 width:6.5rem;
 color: ${(props) => props.navcolor};
-&:hover {
-    color: lightblue;
-    border-bottom:2px solid 
-  }
-display:${(props) => props.udisplay};
 
+display:${(props) => props.udisplay};
+&:hover{
+    
+    color:#859AA7;
+  }
 @media (max-width: 780px)
 {
     width:2rem;

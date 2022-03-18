@@ -123,7 +123,6 @@ flex-direction:column;
 justify-content:center;
 align-items:flex-start;
 height:40rem;
-// padding-left:15%
 
 `
 const PicCon = styled.div`
@@ -178,7 +177,15 @@ margin-left:0rem;
   margin-top:10rem;
   margin-left:-1rem;
 }
+@media (max-width: 350px)
+{
+  width:12rem;
+  margin-top:10rem;
+  margin-left:-3rem;
+}
 `
+
+
 const ColorBlock = styled.img`
 objet-fit:cover;
 width:52.5rem;
@@ -199,11 +206,16 @@ font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-height: 2rem;
-margin:.1rem;
+margin-bottmom:.5rem;
 @media (max-width: 600px)
 {
   font-size:1rem;
   line-height: 1.5rem;
+}
+@media (max-width: 350px)
+{
+  font-size:1rem;
+  line-height: 1.25rem;
 }
 `
 const Intro3 = styled.p`
@@ -223,7 +235,7 @@ width:70%;
 {
   font-size:.9rem;
   line-height: 1.2rem;
-  width:110%;
+  width:80%;
 }
 `
 const Intro1 = styled.div`
@@ -293,7 +305,8 @@ text-align:center;
 const Introduction = styled.div`
 height:45rem;
 background-color:#E5E5E5;
-padding:5rem;
+padding-top:5rem;
+padding-bottom:5rem;
 padding-bottom:7.5rem;
 width:100vw;
 position:absolute;
@@ -363,6 +376,10 @@ align-items:flex-start;
 @media (max-width: 1000px)
 {
   width:100%;
+}
+@media (max-width: 800px)
+{
+  height:22.5rem;
 }
 `
 const ArrowButton = styled.div`
@@ -490,7 +507,6 @@ export default function Home() {
             <Intro2>UI/UX Desinger</Intro2> */}
              
             {windowW > 1000 ?
-            
             <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "2rem" }} /> :
             <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "1.75rem" }} />
           }
