@@ -172,6 +172,12 @@ margin-left:0rem;
   margin-top:10rem;
   margin-left:0rem;
 }
+@media (max-width: 400px)
+{
+  width:13rem;
+  margin-top:10rem;
+  margin-left:-1rem;
+}
 `
 const ColorBlock = styled.img`
 objet-fit:cover;
@@ -239,6 +245,7 @@ margin:.1rem;
 {
   font-size:2rem;
 }
+
 `
 const Intro2 = styled.div`
 font-size:2.25rem;
@@ -262,15 +269,29 @@ text-align:center
 const Title2 = styled.h1`
 font-family: 'Baumans';
 color:#7ca5b8;
-// border-bottom:.2rem solid #7ca5b8;
 text-align:center;
+@media (max-width: 1400px)
+{
+  font-size:2rem;
+  margin-bottom:0rem;
+  padding:0;
+  line-height:2rem;
+}
 @media (max-width: 600px)
 {
   font-size:1.25rem
 }
+@media (max-width: 400px)
+{
+  font-size:1.2rem;
+  margin-top:2rem;
+  margin-bottom:0rem;
+  padding:0;
+  line-height:1rem;
+}
 `
 const Introduction = styled.div`
-height:32.5rem;
+height:45rem;
 background-color:#E5E5E5;
 padding:5rem;
 padding-bottom:7.5rem;
@@ -281,11 +302,11 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 clip-path: polygon(0 0%, 100% 25%, 100% 100%, 0% 75%);
-margin-top:-9rem;
+margin-top:-11.5rem;
 z-index:3;
 @media (max-width: 1400px)
 {
-  height:27.5rem;
+  height:35rem;
   margin-top:-5rem;
   clip-path: polygon(0 0%, 100% 15%, 100% 100%, 0% 85%);
 }
@@ -298,12 +319,20 @@ z-index:3;
 
 `
 const Projects = styled.div`
-margin-top:20rem;
-margin-bottom:20rem;
+margin-top:30rem;
+margin-bottom:10rem;
 display:flex;
 flex-direction:column;
 width:100%;
 height:100%;
+@media (max-width: 1980px)
+{
+  margin-top:27.5rem;
+}
+@media (max-width: 600px)
+{
+  margin-top:25rem;
+}
 `
 const ProjectItem = styled.div`
 width:100%;
@@ -358,7 +387,13 @@ export default function Home() {
   const ref = useRef([])
   const [items, set] = useState([])
   const [count, setCount] = useState(0);
-
+  const [windowW,setWindowW]=useState(0)
+  useEffect(()=>{
+    console.log("window.innerWidth", window.innerWidth);
+    var y = window.innerWidth
+    
+    setWindowW(y)
+  },[windowW])
   useEffect(() => {
     let counter = count;
     const interval = setInterval(() => {
@@ -419,11 +454,11 @@ export default function Home() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-      duration: 3000,
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
     });
   };
+  
 
   return (
     <Wrraper>
@@ -453,7 +488,13 @@ export default function Home() {
             {/* <Intro1>Hello, I am Levi.</Intro1>
             <Intro2>Front-end Developer</Intro2>
             <Intro2>UI/UX Desinger</Intro2> */}
-            <SocialIcon />
+             
+            {windowW > 1000 ?
+            
+            <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "2rem" }} /> :
+            <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "1.75rem" }} />
+          }
+            
           </ShortIntroCon>
 
           <PicCon >   <PicImg src='LeviChen2.png' /> </PicCon>
@@ -482,10 +523,11 @@ export default function Home() {
           </Intro>
 
             {project.slice(0, count).map((o, i) => <>
-              <animated.div style={styles} key={i} >
-                <ProjectItem name={o.name} >
+              <animated.div style={styles}  >
+                <ProjectItem name={o.name}key={i}>
                   <ProjectCard>
-                    <ActionAreaCard
+                    <ActionAreaCard 
+                    key={i}
                       title={o.title}
                       time={o.time}
                       codeTool={o.codeTool}
@@ -500,7 +542,7 @@ export default function Home() {
                     {/* <Intro> Enter</Intro> */}
                     <ArrowButton>
                       <UpArrow>
-                <Link activeClass="active" to={o.back} spy={true} smooth={true}>
+                <Link activeClass="active" to={o.back} spy={true} smooth={true} >
                         <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
                      </Link>
                       </UpArrow>

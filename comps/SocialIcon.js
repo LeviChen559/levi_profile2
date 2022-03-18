@@ -56,21 +56,21 @@ const Pinterest =styled.div`
     animation: ${pulse} 1000ms infinite alternate;
 }
 `
-const SocialIcon = () => {
+const SocialIcon = ({value={ color: "#E5E5E5", className: "global-class-name", size: "2rem" }}) => {
   const router=useRouter()
     return <SocialLinkCon>
 
-        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2em' }} >
+        <IconContext.Provider value={value} >
            <Linkedin onClick={()=>window.open("https://www.linkedin.com/in/yi-jen-levi-chen-87a1a2126/")}>
             <FaLinkedinIn />
            </Linkedin>
         </IconContext.Provider>
-        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem'  }}>
+        <IconContext.Provider value={value}>
            <Github onClick={()=>window.open("https://github.com/LeviChen559")}>
             <FaGithub />
            </Github>
         </IconContext.Provider>
-        <IconContext.Provider value={{ color: "#E5E5E5", className: "global-class-name", size: '2rem'  }}>
+        <IconContext.Provider  value={value} >
            <Pinterest>
             <FaPinterest />
            </Pinterest>

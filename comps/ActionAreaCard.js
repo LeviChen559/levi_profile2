@@ -13,7 +13,6 @@ export default function ActionAreaCard({
   time="2022",
   routeTo="/",
   codeTool,
-  maxHeight="700",
   height="275"
 }) {
   const router = useRouter()
@@ -24,7 +23,6 @@ export default function ActionAreaCard({
       <CardActionArea   onClick={()=>window.open(routeTo)} >
         <CardMedia 
           component="img"
-          maxHeight={maxHeight}
           height={height}
           image={src}
           alt={title}

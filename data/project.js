@@ -83,8 +83,8 @@ export const project =
         title: "Buzzy Bee",
         time: "Sep, 2021- Dec, 2021",
         members: "5",
-        src: "noti.png",
-        link: "https://lebrary-6fudfkjmo-levichen559.vercel.app",
+        src: "buzzybee.png",
+        link: "https://www.youtube.com/watch?v=m0a9ocunClA",
         codeTool: "React Native(Expo.js), Javascript, Firebase, , Git",
         scrollUp:scrollToTop800,
         scrollDown:scrollToTop1800,
@@ -116,7 +116,7 @@ export const project =
         scrollDown:scrollToTop2600,
         back:"Lebrary",
         next:"Noti",
-        intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic.."
+        intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic."
     }, {
         name:"Noti",
         title: "Noti app Website",
@@ -129,7 +129,7 @@ export const project =
         scrollDown:scrollToTop3000,
         back:"covid",
         next:"",
-        intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic.."
+        intro: "A responsive website that promotes a note app."
     },
 
     ]

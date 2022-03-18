@@ -82,19 +82,19 @@ const NavIcon = ({
     udisplay="none",
     hdisplay="flex",
     aboutClick = () => { },
-
+    sx={fontSize:30}
 
 }) => {
 
 
     return <NavItemCons   >
         <HomeIcon hdisplay={hdisplay} navcolor={navcolor} onClick={homeClick}>
-            < HomeRoundedIcon sx={{ fontSize: 30 }} />
+            < HomeRoundedIcon sx={sx} />
         <NavItemText   >
             {text} </NavItemText>
         </HomeIcon>
         <UserIcon udisplay={udisplay} navcolor={navcolor} onClick={aboutClick}>
-            < PersonRoundedIcon sx={{ fontSize: 30 }} />
+            < PersonRoundedIcon sx={sx} />
             <NavItemText   >
             {text} </NavItemText>
         </UserIcon>

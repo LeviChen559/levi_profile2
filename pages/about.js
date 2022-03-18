@@ -294,7 +294,7 @@ const DownArrow = styled.div`
   opacity:.5
 }
 `
-export default function Home() {
+export default function About() {
   const router = useRouter()
   const [flip, set] = useState(false)
   const [count, setCount] = useState(0);
