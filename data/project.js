@@ -198,7 +198,7 @@ export const webtools =
             src: "./skill_icon/firebase-icon.png"
         }, {
             title: "Database",
-            toolnaame: "Mongodb",
+            toolnaame: "MongoDB",
             exp: "1/2 year",
             src: "./skill_icon/mongodb-icon.png"
         },

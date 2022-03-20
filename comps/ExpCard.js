@@ -34,7 +34,7 @@ export default function ExpCard({
     degreed="Bachelor’s Degree, Industrial and Product Design"
 }) {
   return (
-    <Box sx={{ minWidth: 350,  margin: 2}} >
+    <Box sx={{ minWidth: 350,  margin: 2 ,boxShadow: 5}} >
     <Card variant="outlined" sx={{borderRadius: 2}}>
     <CardContent>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>

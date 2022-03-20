@@ -175,7 +175,7 @@ margin:.1rem;
 }
 `
 const Intro2 = styled.p`
-font-size:2.25rem;
+font-size:2rem;
 font-family: 'Baumans';
 line-height:2.5rem;
 font-weight:200;
@@ -192,16 +192,16 @@ font-family: 'Baumans';
 margin:5%;
 padding-bottom:2%;
 color:#E5E5E5;
-
+text-shadow: 2px 2px 2px grey;
 text-align:center;
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
 margin:5%;
 padding-bottom:2%;
-color:#7ca5b8;
-
+color:#e5e5e5;
 text-align:center;
+text-shadow: 2px 2px 2px grey;
 `
 const Tools = styled.div`
 margin-bottom:20rem;
@@ -260,12 +260,16 @@ background-color:#E5E5E5;
 margin-bottom:5rem;
 padding:7.5rem 0 7.55rem 0;
 width:100vw;
+background-image: url("bgImg.avif");
+filter: brightness(1) ;
+object-fit:none;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 95%);
 `
+
 const ExprienceCard = styled.div`
 width:70%;
 // margin-top:5rem;
@@ -420,7 +424,7 @@ export default function About() {
               </DownArrow>
           </ArrowButton>
           {/* <ExprienceBGC/> */}
-          <Exprience name="Experience">
+          <Exprience name="Experience" src='bgImg.avif'>
 
             <Title2>Education and Experience</Title2>
 

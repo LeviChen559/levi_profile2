@@ -34,9 +34,13 @@ justify-content:flex-start;
 align-items:center;
 position:absolute;
 z-index:2;
+@media (max-width: 1980px)
+{
+  width:70%
+}
 @media (max-width: 700px)
 {
-  width:85%
+  width:80%
 }
 `
 const Container2 = styled.div`
@@ -201,16 +205,21 @@ margin-top:10rem;
 }
 `
 const Intro = styled.p`
-font-size:1.25rem;
+font-size:1.4rem;
 font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-height: 2rem;
 margin-bottmom:.5rem;
+@media (max-width: 1400px)
+{
+  font-size:1.25rem;
+  line-height: 1.5rem;
+}
 @media (max-width: 600px)
 {
-  font-size:1rem;
-  line-height: 1.5rem;
+  font-size:1.2rem;
+  line-height: 1.4rem;
 }
 @media (max-width: 350px)
 {
@@ -219,7 +228,7 @@ margin-bottmom:.5rem;
 }
 `
 const Intro3 = styled.p`
-font-size:1.25rem;
+font-size:1.3rem;
 font-family: 'Baumans';
 font-weight:300;
 color:#7ca5b8;
@@ -260,7 +269,7 @@ margin:.1rem;
 
 `
 const Intro2 = styled.div`
-font-size:2.25rem;
+font-size:2rem;
 font-family: 'Baumans';
 line-height:2.5rem;
 font-weight:200;
@@ -276,12 +285,14 @@ font-family: 'Baumans';
 margin:10%;
 color:#E5E5E5;
 // border-bottom:.2rem solid #E5E5E5;
-text-align:center
+text-align:center;
+text-shadow: 2px 2px 2px grey;
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
 color:#7ca5b8;
 text-align:center;
+text-shadow: 2px 2px 2px lightgrey;
 @media (max-width: 1400px)
 {
   font-size:2rem;
@@ -408,7 +419,6 @@ export default function Home() {
   useEffect(()=>{
     console.log("window.innerWidth", window.innerWidth);
     var y = window.innerWidth
-    
     setWindowW(y)
   },[windowW])
   useEffect(() => {
@@ -417,9 +427,10 @@ export default function Home() {
       if (counter >= project.length) {
         clearInterval(interval);
       } else {
+        
         setCount(count => count + 1);
         counter++; // local variable that this closure will see
-
+      
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -459,7 +470,7 @@ export default function Home() {
     set([])
     ref.current.push(setTimeout(() => set(['Industrial Designer']), 2000))
     ref.current.push(setTimeout(() => set(['Mechanic Engineer']), 5000))
-    ref.current.push(setTimeout(() => set(['UI/UX Designer', 'Frontend Developer']), 8000))
+    ref.current.push(setTimeout(() => set(['UI/UX Designer |', 'Frontend Developer']), 8000))
   }, [])
 
   useEffect(() => {
@@ -540,8 +551,8 @@ export default function Home() {
           </Intro>
 
             {project.slice(0, count).map((o, i) => <>
-              <animated.div style={styles}  >
-                <ProjectItem name={o.name}key={i}>
+              <animated.div style={styles} key={i}  >
+                <ProjectItem name={o.name} >
                   <ProjectCard>
                     <ActionAreaCard 
                     key={i}

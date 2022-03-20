@@ -11,7 +11,7 @@ align-items:center;
 // width:5rem;
 margin-right:2.5rem;
 &:hover:before{
-    backface-visibility: hidden;
+backface-visibility: hidden;
   border: 1px solid rgba(#fff, 0);
   bottom: 0px;
   content: " ";
@@ -24,19 +24,27 @@ margin-right:2.5rem;
   &:hover{
     backface-visibility: hidden;
     color:#859AA7;
-    width:6rem;
+    width:100%;
     border-bottom:2px solid  #859AA7;
     transition: all 800ms ease-in-out;
   }
 @media (max-width: 1400px)
 {
-    width:5rem;
+    width:6rem;
     margin-right:1rem;
+    &:hover{
+       
+        width:6rem;
+      }
 }
 @media (max-width: 980px)
 {
     width:2.5rem;
     margin-right:0;
+    &:hover{
+       
+        width:2.5rem;
+      }
 }
 `
 const NavItemText = styled.div`
