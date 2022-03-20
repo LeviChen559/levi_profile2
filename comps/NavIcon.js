@@ -24,7 +24,7 @@ backface-visibility: hidden;
   &:hover{
     backface-visibility: hidden;
     color:#859AA7;
-    width:100%;
+    width:6rem;
     border-bottom:2px solid  #859AA7;
     transition: all 800ms ease-in-out;
   }
