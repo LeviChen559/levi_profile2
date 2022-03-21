@@ -69,7 +69,7 @@ return <FooterCon BGC={BGC}>
 <TemsAndPrivacy>
 
 <Privacy onClick={()=>window.open("https://www.privacypolicies.com/live/7268dcf5-8124-4715-a08c-b7b367a32497")}>Privacy</Privacy>
-<Terms onClick={()=>window.open("https://www.privacypolicies.com/live/7268dcf5-8124-4715-a08c-b7b367a32497")}>Terms</Terms>
+<Terms onClick={()=>window.open("https://www.privacypolicies.com/live/9339371d-fe58-45eb-9ccf-4d063707ebd5")}>Terms</Terms>
 </TemsAndPrivacy>
 </FooterCon>
 }
