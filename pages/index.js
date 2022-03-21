@@ -15,6 +15,8 @@ import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { global_theme ,foot_theme} from '../utils/variables'
+import { useTheme } from '../utils/provider'
 const Wrraper = styled.div`
 width:100vw;
 height:100%;
@@ -22,7 +24,7 @@ display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:#859AA7;
+background-color:${props=>props.BGC};
 
 `
 const Container = styled.div`
@@ -410,12 +412,31 @@ const DownArrow = styled.div`
   opacity:.5
 }
 `
-export default function Home() {
+export default function Home({
+ 
+}) {
+  const { theme, setTheme } = useTheme();
   const router = useRouter()
   const ref = useRef([])
   const [items, set] = useState([])
   const [count, setCount] = useState(0);
   const [windowW,setWindowW]=useState(0)
+  const [check,setCheck]=useState("close")
+  const [label,setlabel]=useState("Light Mode")
+  const onClick=()=>{
+    if(check=="close" ){
+      setCheck("open")
+      setlabel("Dark Mode")
+     setTheme(theme === 'default')
+    }else{
+    setCheck("close")
+    setlabel("Light Mode")
+    setTheme(theme ==='dark')
+
+  }
+  
+  }
+  console.log(check)
   useEffect(()=>{
     console.log("window.innerWidth", window.innerWidth);
     var y = window.innerWidth
@@ -489,7 +510,7 @@ export default function Home() {
   
 
   return (
-    <Wrraper>
+    <Wrraper BGC={global_theme[theme].color}>
       <Head>
         <title>Levi Chen FrontEnd Developer, UI UX Designer portfolio, BCIT D3 Web Development 2022 </title>
         <meta name="description"
@@ -596,7 +617,10 @@ export default function Home() {
         </Content>
 
       </Container2>
-      <Footer />
+      <Footer BGC={foot_theme[theme].color}
+      onClick={() => setTheme(
+        theme === 'default' ? 'dark' : 'default'
+      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'} />
     </Wrraper>
   )
 }

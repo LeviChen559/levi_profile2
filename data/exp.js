@@ -23,15 +23,6 @@ export const exp = [
 
     },
     {
-        title:"Education",
-        schoolname:"British Columbia Institute of Technology",
-        exp:"2020 – 2022", 
-        src:"./skill_icon/BCIT.png",
-        degreed:"Diploma, Digital design and development",
-        pos:"-50rem"
-
-    },
-    {
         title:"WorkExperience",
         schoolname:"White Box Design",
         exp:"2015 – 2016", 
@@ -46,6 +37,15 @@ export const exp = [
         exp:"2010 – 2019", 
         src:"./skill_icon/kbg.gif",
         degreed:"Industrial Designer",
+        pos:"-50rem"
+
+    },
+    {
+        title:"Education",
+        schoolname:"British Columbia Institute of Technology",
+        exp:"2020 – 2022", 
+        src:"./skill_icon/BCIT.png",
+        degreed:"Diploma, Digital design and development",
         pos:"-50rem"
 
     },

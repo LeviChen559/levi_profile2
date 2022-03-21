@@ -18,6 +18,8 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ExpCard from '../comps/ExpCard'
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { global_theme,foot_theme } from '../utils/variables'
+import { useTheme } from '../utils/provider'
 const Wrraper = styled.div`
 width:100vw;
 height:100%;
@@ -25,7 +27,8 @@ display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:#859AA7;
+background-color:${props => props.BGC};
+
 `
 const Container = styled.div`
 width:60%;
@@ -116,8 +119,6 @@ flex-direction:column;
 justify-content:center;
 align-items:flex-start;
 height:50rem;
-
-
 `
 const PicCon = styled.div`
 display:flex;
@@ -127,7 +128,6 @@ justify-content:center;
 align-items:flex-start;
 height:50rem;
 overflow:hidden;
-
 `
 
 const Intro = styled.p`
@@ -301,6 +301,7 @@ const DownArrow = styled.div`
 }
 `
 export default function About() {
+  const { theme, setTheme } = useTheme();
   const router = useRouter()
   const [flip, set] = useState(false)
   const [count, setCount] = useState(0);
@@ -361,7 +362,7 @@ export default function About() {
   // const screenSize=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   // console.log(screenSize)
   return (
-    <Wrraper>
+    <Wrraper BGC={global_theme[theme].color}>
       <Head>
         <title>Levi Chen FrontEnd Developer, UI UX Designer portfolio, BCIT D3 Web Development 2022 </title>
         <meta name="description"
@@ -395,7 +396,7 @@ export default function About() {
                 src="levi.png"
                 height="375"
                 maxHeight='700'
-                
+
               />
             </ProjectCard>
 
@@ -418,16 +419,14 @@ export default function About() {
               <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
             </UpArrow>
             <DownArrow>
-              <Link activeClass="active" to="Experience" spy={true} smooth={true}> 
-                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
-                </Link>
-              </DownArrow>
+              <Link activeClass="active" to="Experience" spy={true} smooth={true}>
+                <ArrowDropDownRoundedIcon sx={{ fontSize: 50 }} />
+              </Link>
+            </DownArrow>
           </ArrowButton>
           {/* <ExprienceBGC/> */}
           <Exprience name="Experience" src='bgImg.avif'>
-
             <Title2>Education and Experience</Title2>
-
             {exp.slice(0, count).map((o, i) => <>
               <animated.div style={props2} pos={o.pos}>
                 <ExprienceCard >
@@ -445,14 +444,14 @@ export default function About() {
             </>
             )}
             <ArrowButton>
-            <UpArrow>
-                <Link activeClass="active" to="Introduction" spy={true} smooth={true}> 
-                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50, color:"#859AA7"}} />
+              <UpArrow>
+                <Link activeClass="active" to="Introduction" spy={true} smooth={true}>
+                  <ArrowDropUpRoundedIcon sx={{ fontSize: 50, color: "#859AA7" }} />
                 </Link>
               </UpArrow>
               <DownArrow>
-              <Link activeClass="active" to="Development" spy={true} smooth={true}> 
-                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 ,color:"#859AA7"}}  />
+                <Link activeClass="active" to="Development" spy={true} smooth={true}>
+                  <ArrowDropDownRoundedIcon sx={{ fontSize: 50, color: "#859AA7" }} />
                 </Link>
               </DownArrow>
             </ArrowButton>
@@ -475,14 +474,14 @@ export default function About() {
               )}
             </Tool>
             <ArrowButton>
-            <UpArrow>
-                <Link activeClass="active" to="Experience" spy={true} smooth={true}> 
-                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
+              <UpArrow>
+                <Link activeClass="active" to="Experience" spy={true} smooth={true}>
+                  <ArrowDropUpRoundedIcon sx={{ fontSize: 50 }} />
                 </Link>
               </UpArrow>
               <DownArrow>
-              <Link activeClass="active" to="Design" spy={true} smooth={true}> 
-                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
+                <Link activeClass="active" to="Design" spy={true} smooth={true}>
+                  <ArrowDropDownRoundedIcon sx={{ fontSize: 50 }} />
                 </Link>
               </DownArrow>
             </ArrowButton>
@@ -503,13 +502,13 @@ export default function About() {
             </Tool>
             <ArrowButton>
               <UpArrow>
-                <Link activeClass="active" to="Development" spy={true} smooth={true}> 
-                <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
+                <Link activeClass="active" to="Development" spy={true} smooth={true}>
+                  <ArrowDropUpRoundedIcon sx={{ fontSize: 50 }} />
                 </Link>
               </UpArrow>
               <DownArrow>
-              <Link activeClass="active" to="IndustrialDesign" spy={true} smooth={true}> 
-                <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }}  />
+                <Link activeClass="active" to="IndustrialDesign" spy={true} smooth={true}>
+                  <ArrowDropDownRoundedIcon sx={{ fontSize: 50 }} />
                 </Link>
               </DownArrow>
             </ArrowButton>
@@ -535,7 +534,10 @@ export default function About() {
           </UpArrow>
         </Content>
       </Container2>
-      <Footer />
+      <Footer BGC={foot_theme[theme].color}
+      onClick={() => setTheme(
+        theme === 'default' ? 'dark' : 'default'
+      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'} />
     </Wrraper>
   )
 }
