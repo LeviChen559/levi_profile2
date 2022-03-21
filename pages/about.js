@@ -468,6 +468,8 @@ export default function About() {
                     toolname={o.toolnaame}
                     src={o.src}
                     exp={o.exp}
+                     src2={o.src2}
+                     sx={o.sx}
                   />
                 </animated.div>
               </>
@@ -495,6 +497,8 @@ export default function About() {
                     toolname={o.toolnaame}
                     src={o.src}
                     exp={o.exp}
+                    src2={o.src2}
+                    sx={o.sx}
                   />
                 </animated.div>
               </>
@@ -522,8 +526,8 @@ export default function About() {
                     toolname={o.toolnaame}
                     src={o.src}
                     exp={o.exp}
-                    // src2={o.src2}
-                    // sx={o.sx}
+                    src2={o.src2}
+                     sx={o.sx}
                   />
                 </animated.div>
               </>

@@ -29,7 +29,7 @@ export default function ToolsCard({
     exp="2 years",
     src="./skill_icon/html-icon.png",
     src2="./skill_icon/sass.jpeg",
-    // sx
+    sx
 }) {
   return (
     <Box sx={{ minWidth: 250, margin: 1}} >
@@ -42,8 +42,8 @@ export default function ToolsCard({
        {toolname}
       </Typography>
       <Avatarcom >
-    <Avatar src={src} sx={{ width: 36, height: 36 }}/>
-    {/* <Avatar src={src2} sx={sx}/> */}
+    <Avatar src={src} sx={{ width: 36, height: 36  }}/>
+    <Avatar src={src2} sx={sx}/>
       </Avatarcom>
       <Typography variant="body2">
        {exp}

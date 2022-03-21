@@ -143,15 +143,15 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/html-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Development",
             toolnaame: "CSS/SASS",
             exp: "2 years",
             src: "./skill_icon/css-icon.png",
-            src2:"./skill_icon/sass.jpeg",
-            sx:"{ width: 36, height: 36,display:'flex' }"
+            src2:"./skill_icon/sass.png",
+            sx:{ width: 36, height: 36,display:'flex' , ml:1}
         },
         {
             title: "Development",
@@ -159,7 +159,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/bootstrap-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Development",
@@ -167,7 +167,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/JS-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "FrontEnd",
@@ -175,7 +175,7 @@ export const webtools =
             exp: "1 year",
             src: "./skill_icon/next-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "FrontEnd",
@@ -183,7 +183,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/react-native-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "BackEnd",
@@ -191,7 +191,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/node-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "BackEnd",
@@ -199,7 +199,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/php-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Database",
@@ -207,7 +207,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/mysql-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Database",
@@ -215,21 +215,21 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/firebase-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         }, {
             title: "Database",
             toolnaame: "MongoDB",
             exp: "1/2 year",
             src: "./skill_icon/mongodb-icon.png",
             src2:"",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Version Control",
             toolnaame: "Git",
             exp: "1/2 year",
             src: "./skill_icon/Git-icon.png",
-            sx:"{ width: 36, height: 36,display:'none' }"
+            sx:{ width: 36, height: 36,display:'none' }
         },
     ]
 
@@ -239,34 +239,41 @@ export const webtools =
             title: "prototype",
             toolnaame: "Figma",
             exp: "1 1/2 year",
-            src: "./skill_icon/Figma-icon.png"
+            src: "./skill_icon/Figma-icon.png",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Graphic",
             toolnaame: "Illustrator",
             exp: "10 years +",
             src: "./skill_icon/ai-icon.png",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Graphic",
             toolnaame: "Photshop",
             exp: "10 years +",
             src: "./skill_icon/PS-icon.png",
-            
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Animation",
             toolnaame: "After-effect",
             exp: "1 year",
             src: "./skill_icon/ae-icon.png",
-            
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
-            title: "workfllow",
+            title: "management software",
             toolnaame: "Miro",
             exp: "1 year",
-           
-            src: "./skill_icon/miro-icon.webp"
+            src: "./skill_icon/miro-icon.webp",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         }
        
     ]
@@ -276,19 +283,25 @@ export const webtools =
             title: "3D modeling",
             toolnaame: "Solidworks",
             exp: "10 years +",
-            src: "./skill_icon/Solidworks-icon.png"
+            src: "./skill_icon/Solidworks-icon.png",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Rendering",
             toolnaame: "Cinema 4D",
             exp: "10 years +",
-            src: "./skill_icon/Cinema4D-icon.png"
+            src: "./skill_icon/Cinema4D-icon.png",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
         {
             title: "Rendering",
             toolnaame: "KeyShot",
             exp: "10 years +",
-            src: "./skill_icon/keyshot-icon.png"
+            src: "./skill_icon/keyshot-icon.png",
+            src2:"",
+            sx:{ width: 36, height: 36,display:'none' }
         },
        
     ]
