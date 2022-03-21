@@ -537,7 +537,9 @@ export default function About() {
       <Footer BGC={foot_theme[theme].color}
       onClick={() => setTheme(
         theme === 'default' ? 'dark' : 'default'
-      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'} />
+      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
+      switchState={theme === 'default' ? ".MuiSwitch-switchBase" : ".MuiSwitch-switchBase .Mui-checked"}
+      />
     </Wrraper>
   )
 }

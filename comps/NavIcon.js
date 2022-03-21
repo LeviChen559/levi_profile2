@@ -70,6 +70,7 @@ margin-left:.5rem;
 const HomeIcon = styled.div`
 flex-dirextion:row;
 width:6.5rem;
+align-items:center;
 display:${(props) => props.hdisplay};
 color: ${(props) => props.navcolor};
 &:hover{
@@ -85,6 +86,7 @@ color: ${(props) => props.navcolor};
 const UserIcon = styled.div`
 flex-dirextion:row;
 width:6.5rem;
+align-items:center;
 color: ${(props) => props.navcolor};
 
 display:${(props) => props.udisplay};
@@ -105,7 +107,7 @@ const NavIcon = ({
     udisplay="none",
     hdisplay="flex",
     aboutClick = () => { },
-    sx={fontSize:30}
+    sx={fontSize:24}
 
 }) => {
 

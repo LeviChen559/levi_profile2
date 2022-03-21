@@ -521,7 +521,9 @@ export default function Home({
       <MainView src='black.png' />
       <Container name="Top">
         <NavCon>
-          <NavBar />
+          {windowW>1000? 
+          <NavBar sx={{fontSize:22}}/>: <NavBar sx={{fontSize:30}}/>
+          }
         </NavCon>
         <MainViewCon>
           <ShortIntroCon>
@@ -620,7 +622,9 @@ export default function Home({
       <Footer BGC={foot_theme[theme].color}
       onClick={() => setTheme(
         theme === 'default' ? 'dark' : 'default'
-      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'} />
+      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
+      switchState={theme === 'default' ? ".MuiSwitch-switchBase " : ".MuiSwitch-switchBase .Mui-checked"}
+      />
     </Wrraper>
   )
 }

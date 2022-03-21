@@ -32,7 +32,7 @@ width:50%;
 `
 
 const NavBar = ({
-  
+  sx
 }) => {
     const router = useRouter()
     const [navcolor1, setNavcolor1] = useState(false)
@@ -51,8 +51,8 @@ const NavBar = ({
     return <NavBarCon>
         <LogoCon> <Logo /></LogoCon>
         <NavCon>
-            <NavIcon homeClick={Home}  navcolor={navcolor1 ? '#E9C46A' : '#E5E5E5'} />
-            <NavIcon aboutClick={about} hdisplay="none" text="about" udisplay="flex" navcolor={navcolor2 ? '#E9C46A' : '#E5E5E5'} />
+            <NavIcon homeClick={Home}  navcolor={navcolor1 ? '#E9C46A' : '#E5E5E5'} sx={sx}/>
+            <NavIcon aboutClick={about} hdisplay="none" text="about" udisplay="flex" navcolor={navcolor2 ? '#E9C46A' : '#E5E5E5'} sx={sx}/>
            
          </NavCon>
     </NavBarCon>

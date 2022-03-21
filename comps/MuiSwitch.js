@@ -7,10 +7,10 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from "@material-ui/styles";
 
-const IOSSwitch = styled((props) => (
+const IOSSwitch = styled((props,switchState) => (
   
 
-    <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} 
+    <Switch focusVisibleClassName={switchState} disableRipple {...props} 
     />
   ))(({ theme }) => ({
     width: 42,
@@ -75,7 +75,7 @@ const IOSSwitch = styled((props) => (
     onClick=()=>{},
     check,
     label="Light Mode",
-    
+    switchState
   }) {
  
     const classes = useStyles();
@@ -84,7 +84,7 @@ const IOSSwitch = styled((props) => (
     return (
       <FormGroup>
         <FormControlLabel 
-          control={<IOSSwitch sx={{ m: 1 }} check={check} onClick={onClick} />}
+          control={<IOSSwitch sx={{ m: 1 }} check={check} onClick={onClick} switchState={switchState}/>}
           label= {<Typography className={classes.formControlLabel}>{label}</Typography>}
            
         />

@@ -25,7 +25,7 @@ margin:1rem;
 
 const Footer =({
     onClick=()=>{},
-    check,label,BGC
+    check,label,BGC,switchState
 })=>{
     var thisYesr = new Date()
     var year = thisYesr.getYear()+1900
@@ -33,7 +33,7 @@ const Footer =({
     console.log(year)
 return <RooterCon BGC={BGC}>
     <SocialIcon/> 
-    <MuiSwitch onClick={onClick} check={check} label={label}/>
+    <MuiSwitch onClick={onClick} check={check} label={label} switchState={switchState}/>
 <Rootertext> Ⓒ Levi Chen Profolio Website {year} </Rootertext>
 </RooterCon>
 }
