@@ -39,6 +39,10 @@ justify-content:flex-start;
 align-items:center;
 position:absolute;
 z-index:2;
+@media (max-width: 1980px)
+{
+  width:70%
+}
 @media (max-width: 700px)
 {
   width:85%

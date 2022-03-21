@@ -42,7 +42,7 @@ z-index:2;
 }
 @media (max-width: 700px)
 {
-  width:80%
+  width:85%
 }
 `
 const Container2 = styled.div`
