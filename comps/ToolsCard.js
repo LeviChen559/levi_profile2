@@ -21,13 +21,15 @@ flex-direction:row;
 justify-content:flex-end;
 margin:0;
 
-
 `
 
 export default function ToolsCard({
     title="Development",
     toolname="HTML5",
-    exp="2 years",src="./skill_icon/html-icon.png"
+    exp="2 years",
+    src="./skill_icon/html-icon.png",
+    src2="./skill_icon/sass.jpeg",
+    // sx
 }) {
   return (
     <Box sx={{ minWidth: 250, margin: 1}} >
@@ -41,6 +43,7 @@ export default function ToolsCard({
       </Typography>
       <Avatarcom >
     <Avatar src={src} sx={{ width: 36, height: 36 }}/>
+    {/* <Avatar src={src2} sx={sx}/> */}
       </Avatarcom>
       <Typography variant="body2">
        {exp}

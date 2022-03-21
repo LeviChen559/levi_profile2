@@ -141,72 +141,95 @@ export const webtools =
             title: "Development",
             toolnaame: "HTML5",
             exp: "2 years",
-            src: "./skill_icon/html-icon.png"
+            src: "./skill_icon/html-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "Development",
-            toolnaame: "CSS/SAAS",
+            toolnaame: "CSS/SASS",
             exp: "2 years",
-            src: "./skill_icon/css-icon.png"
+            src: "./skill_icon/css-icon.png",
+            src2:"./skill_icon/sass.jpeg",
+            sx:"{ width: 36, height: 36,display:'flex' }"
         },
         {
             title: "Development",
             toolnaame: "Bootstrap",
             exp: "2 years",
-            src: "./skill_icon/bootstrap-icon.png"
+            src: "./skill_icon/bootstrap-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "Development",
             toolnaame: "Javascript",
             exp: "2 years",
-            src: "./skill_icon/JS-icon.png"
+            src: "./skill_icon/JS-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "FrontEnd",
             toolnaame: "React(Next)",
             exp: "1 year",
-            src: "./skill_icon/next-icon.png"
+            src: "./skill_icon/next-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "FrontEnd",
             toolnaame: "React-Native(Expo)",
             exp: "1/2 year",
-            src: "./skill_icon/react-native-icon.png"
+            src: "./skill_icon/react-native-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "BackEnd",
             toolnaame: "Node",
             exp: "1/2 year",
-            src: "./skill_icon/node-icon.png"
+            src: "./skill_icon/node-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "BackEnd",
             toolnaame: "PHP",
             exp: "1/2 year",
-            src: "./skill_icon/php-icon.png"
+            src: "./skill_icon/php-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "Database",
             toolnaame: "MySQL",
             exp: "1/2 year",
-            src: "./skill_icon/mysql-icon.png"
+            src: "./skill_icon/mysql-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "Database",
             toolnaame: "Firebase",
             exp: "1/2 year",
-            src: "./skill_icon/firebase-icon.png"
+            src: "./skill_icon/firebase-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         }, {
             title: "Database",
             toolnaame: "MongoDB",
             exp: "1/2 year",
-            src: "./skill_icon/mongodb-icon.png"
+            src: "./skill_icon/mongodb-icon.png",
+            src2:"",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
         {
             title: "Version Control",
             toolnaame: "Git",
             exp: "1/2 year",
-            src: "./skill_icon/Git-icon.png"
+            src: "./skill_icon/Git-icon.png",
+            sx:"{ width: 36, height: 36,display:'none' }"
         },
     ]
 
@@ -222,24 +245,27 @@ export const webtools =
             title: "Graphic",
             toolnaame: "Illustrator",
             exp: "10 years +",
-            src: "./skill_icon/ai-icon.png"
+            src: "./skill_icon/ai-icon.png",
         },
         {
             title: "Graphic",
             toolnaame: "Photshop",
             exp: "10 years +",
-            src: "./skill_icon/PS-icon.png"
+            src: "./skill_icon/PS-icon.png",
+            
         },
         {
             title: "Animation",
             toolnaame: "After-effect",
             exp: "1 year",
-            src: "./skill_icon/ae-icon.png"
+            src: "./skill_icon/ae-icon.png",
+            
         },
         {
             title: "workfllow",
             toolnaame: "Miro",
             exp: "1 year",
+           
             src: "./skill_icon/miro-icon.webp"
         }
        
