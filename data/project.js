@@ -235,12 +235,19 @@ export const webtools =
             src: "./skill_icon/Git-icon.png",
             sx: { width: 36, height: 36, display: 'none' }
         },
+        {
+            title: "CMS",
+            toolnaame: "WordPress",
+            exp: "1/2 year",
+            src: "./skill_icon/wordpress.png",
+            sx: { width: 36, height: 36, display: 'none' }
+        },
     ]
 
 export const designtools =
     [
         {
-            title: "prototype",
+            title: "Prototyping",
             toolnaame: "Figma",
             exp: "1 1/2 year",
             src: "./skill_icon/Figma-icon.png",
@@ -268,6 +275,14 @@ export const designtools =
             toolnaame: "After-effect",
             exp: "1 year",
             src: "./skill_icon/ae-icon.png",
+            src2: "",
+            sx: { width: 36, height: 36, display: 'none' }
+        },
+        {
+            title: "Layout",
+            toolnaame: "Indesign",
+            exp: "1/2 year",
+            src: "./skill_icon/indesign.png",
             src2: "",
             sx: { width: 36, height: 36, display: 'none' }
         },
