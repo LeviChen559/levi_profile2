@@ -284,7 +284,7 @@ margin-bottom:1rem;
 `
 const Title = styled.h1`
 font-family: 'Baumans';
-margin:10%;
+margin:5%;
 color:#E5E5E5;
 // border-bottom:.2rem solid #E5E5E5;
 text-align:center;
@@ -316,7 +316,7 @@ text-shadow: 2px 2px 2px lightgrey;
 }
 `
 const Introduction = styled.div`
-height:40rem;
+height:37.5rem;
 background-color:#E5E5E5;
 padding-top:2rem;
 padding-bottom:2.5rem;
@@ -331,13 +331,13 @@ margin-top:-10rem;
 z-index:3;
 @media (max-width: 1400px)
 {
-  height:35rem;
+  height:27.5rem;
   margin-top:-5rem;
   clip-path: polygon(0 0%, 100% 15%, 100% 100%, 0% 85%);
 }
 @media (max-width: 600px)
 {
-  height:25rem;
+  height:20rem;
   margin-top:-4rem;
   clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 90%);
 }
@@ -352,18 +352,18 @@ width:100%;
 height:100%;
 @media (max-width: 1980px)
 {
-  margin-top:27.5rem;
+  margin-top:22.5rem;
 }
 @media (max-width: 600px)
 {
-  margin-top:25rem;
+  margin-top:17.5rem;
 }
 `
 const ProjectItem = styled.div`
 width:100%;
 display:flex;
 flex-direction:row;
-margin-bottom:5rem;
+margin-bottom:3rem;
 justify-content:space-between;
 @media (max-width: 1000px)
 {

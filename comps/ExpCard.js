@@ -37,14 +37,14 @@ export default function ExpCard({
     <Box sx={{ minWidth: 350,  margin: 1 ,boxShadow: 5}} >
     <Card variant="outlined" sx={{borderRadius: 2}}>
     <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+      <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
         {title}
       </Typography>
       <Typography variant="body" component="div">
        {schoolname}
       </Typography>
       <Avatarcom >
-    <Avatar src={src} sx={{ width: 30, height: 30 }}/>
+    <Avatar src={src} sx={{ width: 40, height: 40 }}/>
       </Avatarcom>
       <Typography variant="body2">
        {degreed}

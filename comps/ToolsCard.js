@@ -33,16 +33,16 @@ export default function ToolsCard({
 }) {
   return (
     <Box sx={{ minWidth: 200,margin: 1}} >
-    <Card variant="outlined" sx={{borderRadius: 2,height:140}}>
+    <Card variant="outlined" sx={{borderRadius: 2,height:135}}>
     <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+      <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
         {title}
       </Typography>
       <Typography variant="h6" component="div">
        {toolname}
       </Typography>
       <Avatarcom >
-    <Avatar src={src} sx={{ width: 30, height: 30  }}/>
+    <Avatar src={src} sx={{ width: 40, height: 40  }}/>
     <Avatar src={src2} sx={sx}/>
       </Avatarcom>
       <Typography variant="body2">

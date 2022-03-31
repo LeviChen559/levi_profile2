@@ -42,7 +42,7 @@ export const exp = [
     },
     {
         title:"Education",
-        schoolname:"British Columbia Institute of Technology",
+        schoolname:<>British Columbia Institute of<br/> Technology</>,
         exp:"2020 – 2022", 
         src:"./skill_icon/BCIT.png",
         degreed:"Diploma, Digital design and development",
