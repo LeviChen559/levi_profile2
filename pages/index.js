@@ -316,11 +316,10 @@ text-shadow: 2px 2px 2px lightgrey;
 }
 `
 const Introduction = styled.div`
-height:45rem;
+height:40rem;
 background-color:#E5E5E5;
-padding-top:5rem;
-padding-bottom:5rem;
-padding-bottom:7.5rem;
+padding-top:2rem;
+padding-bottom:2.5rem;
 width:100vw;
 position:absolute;
 display:flex;
@@ -328,7 +327,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 clip-path: polygon(0 0%, 100% 25%, 100% 100%, 0% 75%);
-margin-top:-11.5rem;
+margin-top:-10rem;
 z-index:3;
 @media (max-width: 1400px)
 {

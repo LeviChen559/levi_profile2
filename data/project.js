@@ -120,7 +120,7 @@ export const project =
         scrollDown: scrollToTop2600,
         back: "Lebrary",
         next: "Noti",
-        intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic."
+        intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic. There are three main features of the website. Firstly, it provides the latest statistics on covid-19 and the government policy. Secondly, there is a small quiz to test your memories. Lastly, it gives you the info about how to protect your health and the info about vaccines."
     }, {
         name: "Noti",
         title: "Noti app Website",
@@ -133,7 +133,7 @@ export const project =
         scrollDown: scrollToTop3000,
         back: "covid",
         next: "",
-        intro: "A responsive website that promotes a note app."
+        intro: "The Noti app is an app that combines three features, a calendar system, a note system, and a checklist system. The purpose is to make users get their life under control and organized. In this project, we are creating a responsive website that promotes the Noti app. To demo the functions to the public.."
     },
 
     ]
@@ -147,7 +147,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/html-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Development",
@@ -155,7 +155,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/css-icon.png",
             src2: "./skill_icon/sass.png",
-            sx: { width: 36, height: 36, display: 'flex', ml: 1 }
+            sx: { width: 30, height: 30, display: 'flex', ml: 1 }
         },
         {
             title: "Development",
@@ -163,7 +163,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/bootstrap-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Development",
@@ -171,7 +171,7 @@ export const webtools =
             exp: "2 years",
             src: "./skill_icon/JS-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "FrontEnd",
@@ -179,7 +179,7 @@ export const webtools =
             exp: "1 year",
             src: "./skill_icon/next-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "FrontEnd",
@@ -187,7 +187,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/react-native-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "BackEnd",
@@ -195,7 +195,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/node-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "BackEnd",
@@ -203,7 +203,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/php-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Database",
@@ -211,7 +211,7 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/mysql-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Database",
@@ -219,28 +219,28 @@ export const webtools =
             exp: "1/2 year",
             src: "./skill_icon/firebase-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         }, {
             title: "Database",
             toolnaame: "MongoDB",
             exp: "1/2 year",
             src: "./skill_icon/mongodb-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Version Control",
             toolnaame: "Git",
             exp: "1/2 year",
             src: "./skill_icon/Git-icon.png",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "CMS",
             toolnaame: "WordPress",
             exp: "1/2 year",
             src: "./skill_icon/wordpress.png",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
     ]
 
@@ -252,7 +252,7 @@ export const designtools =
             exp: "1 1/2 year",
             src: "./skill_icon/Figma-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Graphic",
@@ -260,7 +260,7 @@ export const designtools =
             exp: "10 years +",
             src: "./skill_icon/ai-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Graphic",
@@ -268,7 +268,7 @@ export const designtools =
             exp: "10 years +",
             src: "./skill_icon/PS-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Animation",
@@ -276,7 +276,7 @@ export const designtools =
             exp: "1 year",
             src: "./skill_icon/ae-icon.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Layout",
@@ -284,7 +284,7 @@ export const designtools =
             exp: "1/2 year",
             src: "./skill_icon/indesign.png",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         },
         {
             title: "Management software",
@@ -292,7 +292,7 @@ export const designtools =
             exp: "1 year",
             src: "./skill_icon/miro-icon.webp",
             src2: "",
-            sx: { width: 36, height: 36, display: 'none' }
+            sx: { width: 30, height: 30, display: 'none' }
         }
 
     ]
@@ -303,7 +303,7 @@ export const idtools =
         exp: "3 years ",
         src: "./skill_icon/autocad.png",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
     {
         title: "3D Modeling-Surface",
@@ -311,7 +311,7 @@ export const idtools =
         exp: "5 years +",
         src: "./skill_icon/alias.jpeg",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
     {
         title: "3D Modeling-Solid",
@@ -319,7 +319,7 @@ export const idtools =
         exp: "10 years +",
         src: "./skill_icon/Solidworks-icon.png",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
     {
         title: "3D Modeling-Solid",
@@ -327,7 +327,7 @@ export const idtools =
         exp: "5 years +",
         src: "./skill_icon/proe.webp",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
     {
         title: "Rendering",
@@ -335,7 +335,7 @@ export const idtools =
         exp: "10 years +",
         src: "./skill_icon/Cinema4D-icon.png",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
     {
         title: "Rendering",
@@ -343,7 +343,7 @@ export const idtools =
         exp: "10 years +",
         src: "./skill_icon/keyshot-icon.png",
         src2: "",
-        sx: { width: 36, height: 36, display: 'none' }
+        sx: { width: 30, height: 30, display: 'none' }
     },
 
     ]

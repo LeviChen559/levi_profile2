@@ -77,6 +77,7 @@ width:100%;
 height:50rem;
 object-fit:cover;
 display: block;
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
 @media (max-width: 1980px)
 {
   height:45rem;
@@ -105,11 +106,11 @@ overflow:hidden;
   height:35rem;
 }
 `
+
 const Content = styled.div`
 display:flex;
 width:90%;
 height:100%;
-// background-color:#7ca5b8;
 margin:0;
 flex-direction:column;
 justify-content:flex-start;
@@ -201,14 +202,33 @@ text-align:center;
 `
 const Title2 = styled.h1`
 font-family: 'Baumans';
-margin:5%;
-padding-bottom:2%;
-color:#e5e5e5;
+color:#7ca5b8;
 text-align:center;
-text-shadow: 2px 2px 2px grey;
+text-shadow: 2px 2px 2px lightgrey;
+line-height:5rem;
+margin-bottom:1%;
+@media (max-width: 1400px)
+{
+  font-size:2rem;
+  margin-bottom:2.5%;
+  padding:0;
+  line-height:2rem;
+}
+@media (max-width: 600px)
+{
+  font-size:1.25rem
+}
+@media (max-width: 400px)
+{
+  font-size:1.2rem;
+  margin-top:2rem;
+  margin-bottom:0rem;
+  padding:0;
+  line-height:1rem;
+}
 `
 const Tools = styled.div`
-margin-bottom:20rem;
+margin-bottom:10rem;
 width:100%;
 height:100%;
 display:flex;
@@ -230,7 +250,7 @@ width:100%;
 height:100%;
 display:flex;
 flex-direction:row;
-margin-bottom:10rem;
+margin-bottom:5rem;
 justify-content:space-between;
 @media (max-width: 1000px)
 {
@@ -261,10 +281,10 @@ align-items:flex-start;
 const Exprience = styled.div`
 height:100%;
 background-color:#E5E5E5;
-margin-bottom:5rem;
-padding:7.5rem 0 7.55rem 0;
+margin-bottom:2rem;
+padding:5rem 0 5rem 0;
 width:100vw;
-background-image: url("bgImg.avif");
+// background-image: url("bgImg.avif");
 filter: brightness(1) ;
 object-fit:none;
 display:flex;
@@ -275,12 +295,11 @@ clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 95%);
 `
 
 const ExprienceCard = styled.div`
-width:70%;
-// margin-top:5rem;
+width:100%;
 margin-left:${(props) => props.mr};
 display:flex;
 flex-direction:column;
-// flex-wrap:nowrap;
+flex-wrap:nowrap;
 justify-content:center;
 align-items:center;
 @media {max-width:600px}{
@@ -322,12 +341,12 @@ export default function About() {
     return () => clearInterval(interval);
   }, [exp]);
   const props2 = useSpring({
-    to: { marginLeft: "7.5rem" },
+    to: { marginLeft: "0rem" },
     from: { marginLeft: "100rem" },
     reset: false,
     reverse: false,
     // delay: 100,
-    config: { tension: 170, duration: 3000 },
+    config: { tension: 170, duration: 2000 },
     onRest: () => set(!flip),
   })
   const props = useSpring({
@@ -338,7 +357,7 @@ export default function About() {
     from: { opacity: 0 },
     reset: false,
     reverse: false,
-    delay: 5000,
+    delay: 3000,
     config: { duration: 1000 },
     onRest: () => set(!flip),
   })
@@ -387,8 +406,8 @@ export default function About() {
         </MainViewCon>
 
       </Container>
+       
       <Container2>
-
 
         <Content>
           <Title name="Introduction"> Who I Am ? </Title>
@@ -428,8 +447,7 @@ export default function About() {
               </Link>
             </DownArrow>
           </ArrowButton>
-          {/* <ExprienceBGC/> */}
-          <Exprience name="Experience" src='bgImg.avif'>
+          <Exprience name="Experience">
             <Title2>Education and Experience</Title2>
             {exp.slice(0, count).map((o, i) => <>
               <animated.div style={props2} pos={o.pos}>
