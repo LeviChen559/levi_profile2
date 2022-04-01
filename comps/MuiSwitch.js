@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/styles";
 const IOSSwitch = styled((props,switchState) => (
   
 
-    <Switch focusVisibleClassName={switchState} disableRipple {...props} 
+    <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} 
     />
   ))(({ theme }) => ({
     width: 42,
@@ -73,9 +73,8 @@ const IOSSwitch = styled((props,switchState) => (
 
   export default function MuiSwitch({
     onClick=()=>{},
-    check,
     label="Light Mode",
-    switchState
+    checked
   }) {
  
     const classes = useStyles();
@@ -84,7 +83,7 @@ const IOSSwitch = styled((props,switchState) => (
     return (
       <FormGroup>
         <FormControlLabel 
-          control={<IOSSwitch sx={{ m: 1 }} check={check} onClick={onClick} switchState={switchState}/>}
+          control={<IOSSwitch sx={{ m: 1 }}  onClick={onClick} checked={checked} />}
           label= {<Typography className={classes.formControlLabel}>{label}</Typography>}
            
         />

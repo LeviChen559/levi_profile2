@@ -56,7 +56,7 @@ height:1.25rem;
 
 const Footer =({
     onClick=()=>{},
-    check,label,BGC,switchState
+    checked,label,BGC,switchState
 })=>{
     var thisYesr = new Date()
     var year = thisYesr.getYear()+1900
@@ -64,7 +64,7 @@ const Footer =({
     console.log(year)
 return <FooterCon BGC={BGC}>
     <SocialIcon/> 
-    <MuiSwitch onClick={onClick} check={check} label={label} switchState={switchState}/>
+    <MuiSwitch onClick={onClick} checked={checked} label={label} switchState={switchState}/>
 <Footertext> Ⓒ Levi Chen Profolio Website {year} </Footertext>
 <TemsAndPrivacy>
 

@@ -619,10 +619,9 @@ export default function Home({
 
       </Container2>
       <Footer BGC={foot_theme[theme].color}
-      onClick={() => setTheme(
-        theme === 'default' ? 'dark' : 'default'
-      )} label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
-      switchState={theme === 'default' ? ".MuiSwitch-switchBase " : ".MuiSwitch-switchBase .Mui-checked"}
+      onClick={() => setTheme(theme === 'default' ? 'dark' : 'default')} 
+      label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
+      checked={theme === 'default' ? null : "defaultChecked"}
       />
     </Wrraper>
   )
