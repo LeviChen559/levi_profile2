@@ -515,6 +515,7 @@ export default function Home({
         <meta name="description"
           content="This portfolio includes web and mobile development projects, especially with MongoDB, Express, React, and Node. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022 who enthuse in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. " />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="thumbnail" content="../public/Logo.svg"/>
         <meta name="description" content="This portfolio includes web and mobile development projects, especially React and React-Native. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022, enthused in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. "></meta>
       </Head>
       <MainView src='black.png' />
