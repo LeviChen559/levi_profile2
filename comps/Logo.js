@@ -9,8 +9,9 @@ justify-content:flex-start;
 align-items:center;
 width: 100%;
 height:100%;
+cursor:pointer;
 `
-const Logotext= styled.p`
+const Logotext = styled.p`
 font-size:4rem;
 line-height:4rem;
 // height:100;
@@ -31,7 +32,7 @@ margin:0;
     
 }
 `
-const Logoimg=styled.img`
+const Logoimg = styled.img`
 width: 3.5rem;
 height:3.5rem;
 margin-left:.5rem;
@@ -47,12 +48,12 @@ height:2.25rem
 }
 `
 
-const Logo= ()=>{
+const Logo = () => {
     const router = useRouter()
-return<LogoCon  onClick={()=>router.push("/")}>
-    <Logotext>Levi</Logotext>
-    <Logoimg src='Logo.svg'/>
-</LogoCon>
+    return <LogoCon onClick={() => router.push("/")}>
+        <Logotext>Levi</Logotext>
+        <Logoimg src='Logo.svg' />
+    </LogoCon>
 
 }
 

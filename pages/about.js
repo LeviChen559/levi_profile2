@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import NavBar from '../comps/NavBar'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Footer from '../comps/Footer'
 import SocialIcon from '../comps/SocialIcon'
 import { useRouter } from 'next/router'
@@ -18,9 +18,11 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ExpCard from '../comps/ExpCard'
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import { global_theme,foot_theme } from '../utils/variables'
+import { global_theme, foot_theme } from '../utils/variables'
 import { useTheme } from '../utils/provider'
-const Wrraper = styled.div`
+import { slideInRight } from 'react-animations'
+const bounceAnimation = keyframes`${slideInRight}`;
+const Wrapper = styled.div`
 width:100vw;
 height:100%;
 display:flex;
@@ -270,7 +272,7 @@ width:55%;
 height:100%;
 display:flex;
 flex-direction:column;
-justify-contnet:space-around;
+justify-content:space-around;
 align-items:flex-start;
 @media (max-width: 1000px)
 {
@@ -278,12 +280,13 @@ align-items:flex-start;
   padding-top:2rem;
 }
 `
-const Exprience = styled.div`
+const Experience = styled.div`
 height:100%;
 background-color:#E5E5E5;
 margin-bottom:2rem;
 padding:5rem 0 5rem 0;
 width:100vw;
+animation: 1s ${bounceAnimation};
 // background-image: url("bgImg.avif");
 filter: brightness(1) ;
 object-fit:none;
@@ -293,10 +296,22 @@ justify-content:center;
 align-items:center;
 clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0% 95%);
 `
+const ExpItems = styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:flex-start;
+flex-wrap:wrap;
+width:75%;
 
-const ExprienceCard = styled.div`
-width:100%;
+@media (max-width: 1000px)
+{
+  width:100%;
+}`
+const ExperienceCard = styled.div`
+width:50%;
 margin-left:${(props) => props.mr};
+animation: 1s ${bounceAnimation};
 display:flex;
 flex-direction:column;
 flex-wrap:nowrap;
@@ -385,7 +400,7 @@ export default function About() {
   // const screenSize=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   // console.log(screenSize)
   return (
-    <Wrraper BGC={global_theme[theme].color}>
+    <Wrapper BGC={global_theme[theme].color}>
       <Head>
         <title>Levi Chen FrontEnd Developer, UI UX Designer portfolio, BCIT D3 Web Development 2022 </title>
         <meta name="description"
@@ -406,7 +421,7 @@ export default function About() {
         </MainViewCon>
 
       </Container>
-       
+
       <Container2>
 
         <Content>
@@ -447,24 +462,24 @@ export default function About() {
               </Link>
             </DownArrow>
           </ArrowButton>
-          <Exprience name="Experience">
+          <Experience name="Experience">
             <Title2>Education and Experience</Title2>
-            {exp.slice(0, count).map((o, i) => <>
-              <animated.div style={props2} pos={o.pos}>
-                <ExprienceCard >
+            <ExpItems >
+              {exp.slice(0, count).map((o, i) => <>
+                <ExperienceCard expName={o.expName}>
                   <ExpCard
                     key={i}
                     title={o.title}
-                    schoolname={o.schoolname}
+                    expName={o.expName}
                     src={o.src}
                     exp={o.exp}
                     degreed={o.degreed}
                     pos={o.pos}
                   />
-                </ExprienceCard>
-              </animated.div>
-            </>
-            )}
+                </ExperienceCard>
+              </>
+              )}
+            </ExpItems>
             <ArrowButton>
               <UpArrow>
                 <Link activeClass="active" to="Introduction" spy={true} smooth={true}>
@@ -477,23 +492,23 @@ export default function About() {
                 </Link>
               </DownArrow>
             </ArrowButton>
-          </Exprience>
+          </Experience>
           <Tools>
             <Title>Skills</Title>
             <Intro2 name="Development"> Development</Intro2>
             <Tool >
               {webtools.map((o, i) => <>
-                <animated.div style={props}>
-                  <ToolsCard
-                    key={i}
-                    title={o.title}
-                    toolname={o.toolnaame}
-                    src={o.src}
-                    exp={o.exp}
-                     src2={o.src2}
-                     sx={o.sx}
-                  />
-                </animated.div>
+                {/* <animated.div style={props}> */}
+                <ToolsCard
+                  key={i}
+                  title={o.title}
+                  toolname={o.toolnaame}
+                  src={o.src}
+                  exp={o.exp}
+                  src2={o.src2}
+                  sx={o.sx}
+                />
+                {/* </animated.div> */}
               </>
               )}
             </Tool>
@@ -541,17 +556,17 @@ export default function About() {
             <Intro2 name="IndustrialDesign"> Industrial Design</Intro2>
             <Tool >
               {idtools.map((o, i) => <>
-                <animated.div style={props}>
-                  <ToolsCard
-                    key={i}
-                    title={o.title}
-                    toolname={o.toolnaame}
-                    src={o.src}
-                    exp={o.exp}
-                    src2={o.src2}
-                     sx={o.sx}
-                  />
-                </animated.div>
+                {/* <animated.div style={props}> */}
+                <ToolsCard
+                  key={i}
+                  title={o.title}
+                  toolname={o.toolnaame}
+                  src={o.src}
+                  exp={o.exp}
+                  src2={o.src2}
+                  sx={o.sx}
+                />
+                {/* </animated.div> */}
               </>
               )}
             </Tool>
@@ -563,10 +578,10 @@ export default function About() {
         </Content>
       </Container2>
       <Footer BGC={foot_theme[theme].color}
-      onClick={() => setTheme(theme === 'default' ? 'dark' : 'default')} 
-      label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
-      checked={theme === 'default' ? null : "defaultChecked"}
+        onClick={() => setTheme(theme === 'default' ? 'dark' : 'default')}
+        label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
+        checked={theme === 'default' ? null : "defaultChecked"}
       />
-    </Wrraper>
+    </Wrapper>
   )
 }

@@ -1,68 +1,4 @@
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop200 = () => {
-    window.scrollTo({
-        top: 200,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop800 = () => {
-    window.scrollTo({
-        top: 800,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop1400 = () => {
-    window.scrollTo({
-        top: 1400,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop1800 = () => {
-    window.scrollTo({
-        top: 1800,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop2200 = () => {
-    window.scrollTo({
-        top: 2200,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
-const scrollToTop2600 = () => {
-    window.scrollTo({
-        top: 2600,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
 
-const scrollToTop3600 = () => {
-    window.scrollTo({
-        top: 3200,
-        behavior: 'smooth'
-        /* you can also use 'auto' behaviour
-           in place of 'smooth' */
-    });
-};
 
 export const project =
     [{
@@ -70,11 +6,10 @@ export const project =
         title: "Echo",
         time: "Feb, 2022- March, 2022",
         members: "2",
+        style: "",
         src: "echo2.png",
         codeTool: "React(Next.js), Javascript, Mongodb, Node.js, Git",
         link: "https://echo-sage.vercel.app/",
-        scrollUp: scrollToTop,
-        scrollDown: scrollToTop1400,
         back: "Top",
         next: "Buzzy Bee",
         intro: "This is a reader social media. In the application, each reader can leave and find comments about books. Also, they can record books to their reading list. You may see other people’s reading lists, so you can request a friend connection or subscribe to their new comments. We provide a platform where readers can share their thoughts and find the same or different ideas. The way may give you the other aspect of view to read books."
@@ -85,11 +20,10 @@ export const project =
         title: "Buzzy Bee",
         time: "Sep, 2021- Dec, 2021",
         members: "5",
+        style: "",
         src: "buzzybee.png",
         link: "https://www.youtube.com/watch?v=m0a9ocunClA",
         codeTool: "React Native(Expo.js), Javascript, Firebase, , Git",
-        scrollUp: scrollToTop800,
-        scrollDown: scrollToTop1800,
         back: "Echo",
         next: "Lebrary",
         intro: "The app helps students to organize their school life. There are three main features in the app, separately schedule, group and meeting. The schedule helps them arrange their time. The group feature brings better communication. The meeting feature solves the pain of group meetings since setting a perfect time for a discussion that fits members is troublesome."
@@ -99,11 +33,10 @@ export const project =
         title: "Lebrary",
         time: "Feb, 2022- Feb, 2022",
         members: "5",
+        style: "",
         src: "lebrary.png",
         link: "https://lebrary.vercel.app/",
         codeTool: "React Native(Expo.js), Javascript, Git",
-        scrollUp: scrollToTop1400,
-        scrollDown: scrollToTop2200,
         back: "Buzzy Bee",
         next: "covid",
         intro: "The app helps students to organize their school life. There are three main features in the app, separately schedule, group and meeting. The schedule helps them arrange their time. The group feature brings better communication. The meeting feature solves the pain of group meetings since setting a perfect time for a discussion that fits members is troublesome."
@@ -113,11 +46,10 @@ export const project =
         title: "Covid-action Website",
         time: "Jan, 2021- May, 2021",
         members: "3",
+        style: "",
         src: "covid.png",
         link: "https://covid-action.vercel.app/",
         codeTool: "React(Next.js), Javascript ,Git",
-        scrollUp: scrollToTop1800,
-        scrollDown: scrollToTop2600,
         back: "Lebrary",
         next: "Noti",
         intro: "A responsive website that provides all info related to covid-19 to help people go through the pandemic. There are three main features of the website. Firstly, it provides the latest statistics on covid-19 and the government policy. Secondly, there is a small quiz to test your memories. Lastly, it gives you the info about how to protect your health and the info about vaccines."
@@ -126,11 +58,10 @@ export const project =
         title: "Noti app Website",
         time: "Jan, 2021- May, 2021",
         members: "3",
+        style: "",
         src: "noti.png",
         link: "https://noti-app.vercel.app",
         codeTool: "React(Next.js), Javascript ,Git",
-        scrollUp: scrollToTop2200,
-        scrollDown: scrollToTop3600,
         back: "covid",
         next: "",
         intro: "The Noti app is an app that combines three features, a calendar system, a note system, and a checklist system. The purpose is to make users get their life under control and organized. In this project, we are creating a responsive website that promotes the Noti app. To demo the functions to the public.."

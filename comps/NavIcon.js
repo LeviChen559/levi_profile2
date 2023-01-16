@@ -68,11 +68,12 @@ margin-left:.5rem;
 }
 `
 const HomeIcon = styled.div`
-flex-dirextion:row;
+flex-direction:row;
 width:6.5rem;
 align-items:center;
 display:${(props) => props.hdisplay};
 color: ${(props) => props.navcolor};
+cursor:pointer;
 &:hover{
     
     color:#859AA7;
@@ -84,9 +85,10 @@ color: ${(props) => props.navcolor};
 }
 `
 const UserIcon = styled.div`
-flex-dirextion:row;
+flex-direction:row;
 width:6.5rem;
 align-items:center;
+cursor:pointer;
 color: ${(props) => props.navcolor};
 
 display:${(props) => props.udisplay};
@@ -101,30 +103,30 @@ display:${(props) => props.udisplay};
 }
 `
 const NavIcon = ({
-    text = "home",
-    navcolor = '#E5E5E5',
-    homeClick = () => { },
-    udisplay="none",
-    hdisplay="flex",
-    aboutClick = () => { },
-    sx={fontSize:24}
+  text = "home",
+  navcolor = '#E5E5E5',
+  homeClick = () => { },
+  udisplay = "none",
+  hdisplay = "flex",
+  aboutClick = () => { },
+  sx = { fontSize: 24 }
 
 }) => {
 
 
-    return <NavItemCons   >
-        <HomeIcon hdisplay={hdisplay} navcolor={navcolor} onClick={homeClick}>
-            < HomeRoundedIcon sx={sx} />
-        <NavItemText   >
-            {text} </NavItemText>
-        </HomeIcon>
-        <UserIcon udisplay={udisplay} navcolor={navcolor} onClick={aboutClick}>
-            < PersonRoundedIcon sx={sx} />
-            <NavItemText   >
-            {text} </NavItemText>
-        </UserIcon>
+  return <NavItemCons   >
+    <HomeIcon hdisplay={hdisplay} navcolor={navcolor} onClick={homeClick}>
+      < HomeRoundedIcon sx={sx} />
+      <NavItemText   >
+        {text} </NavItemText>
+    </HomeIcon>
+    <UserIcon udisplay={udisplay} navcolor={navcolor} onClick={aboutClick}>
+      < PersonRoundedIcon sx={sx} />
+      <NavItemText   >
+        {text} </NavItemText>
+    </UserIcon>
 
-    </NavItemCons>
+  </NavItemCons>
 
 }
 

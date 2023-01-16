@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import NavBar from '../comps/NavBar'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Footer from '../comps/Footer'
 import SocialIcon from '../comps/SocialIcon'
 import { useRouter } from 'next/router'
@@ -15,16 +15,18 @@ import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import { global_theme ,foot_theme} from '../utils/variables'
+import { global_theme, foot_theme } from '../utils/variables'
 import { useTheme } from '../utils/provider'
-const Wrraper = styled.div`
+import { slideInRight } from 'react-animations'
+const bounceAnimation = keyframes`${slideInRight}`;
+const Wrapper = styled.div`
 width:100vw;
 height:100%;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
 align-items:center;
-background-color:${props=>props.BGC};
+background-color:${props => props.BGC};
 
 `
 const Container = styled.div`
@@ -203,7 +205,7 @@ margin-top:10rem;
 @media (max-width: 1400px)
 {
   width:32.5rem;
-  margin-letf:-10rem;
+  margin-left:-10rem;
 }
 `
 const Intro = styled.p`
@@ -212,7 +214,7 @@ font-family: 'Baumans';
 font-weight:300;
 color:#E5E5E5;
 line-height: 2rem;
-margin-bottmom:.5rem;
+margin-bottom:.5rem;
 @media (max-width: 1400px)
 {
   font-size:1.25rem;
@@ -222,6 +224,7 @@ margin-bottmom:.5rem;
 {
   font-size:1.2rem;
   line-height: 1.4rem;
+  margin-top:.0rem;
 }
 @media (max-width: 350px)
 {
@@ -280,6 +283,9 @@ margin-top:1rem;
 margin-bottom:1rem;
 &:hover{
   color:#264653
+}
+@media (max-width: 800px){
+margin:.75rem 0;
 }
 `
 const Title = styled.h1`
@@ -365,6 +371,7 @@ display:flex;
 flex-direction:row;
 margin-bottom:3rem;
 justify-content:space-between;
+animation: 1s ${bounceAnimation};
 @media (max-width: 1000px)
 {
 flex-direction:column;
@@ -391,7 +398,8 @@ align-items:flex-start;
 }
 @media (max-width: 800px)
 {
-  height:22.5rem;
+  height:100%;
+  justify-content: space-around;
 }
 `
 const ArrowButton = styled.div`
@@ -412,45 +420,45 @@ const DownArrow = styled.div`
 }
 `
 export default function Home({
- 
+
 }) {
   const { theme, setTheme } = useTheme();
   const router = useRouter()
   const ref = useRef([])
   const [items, set] = useState([])
   const [count, setCount] = useState(0);
-  const [windowW,setWindowW]=useState(0)
-  const [check,setCheck]=useState("close")
-  const [label,setlabel]=useState("Light Mode")
-  const onClick=()=>{
-    if(check=="close" ){
+  const [windowW, setWindowW] = useState(0)
+  const [check, setCheck] = useState("close")
+  const [label, setLabel] = useState("Light Mode")
+  const onClick = () => {
+    if (check == "close") {
       setCheck("open")
-      setlabel("Dark Mode")
-     setTheme(theme === 'default')
-    }else{
-    setCheck("close")
-    setlabel("Light Mode")
-    setTheme(theme ==='dark')
+      setLabel("Dark Mode")
+      setTheme(theme === 'default')
+    } else {
+      setCheck("close")
+      setLabel("Light Mode")
+      setTheme(theme === 'dark')
+
+    }
 
   }
-  
-  }
-  console.log(check)
-  useEffect(()=>{
+
+  useEffect(() => {
     console.log("window.innerWidth", window.innerWidth);
     var y = window.innerWidth
     setWindowW(y)
-  },[windowW])
+  }, [windowW])
+
   useEffect(() => {
     let counter = count;
     const interval = setInterval(() => {
       if (counter >= project.length) {
         clearInterval(interval);
       } else {
-        
         setCount(count => count + 1);
         counter++; // local variable that this closure will see
-      
+
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -458,11 +466,12 @@ export default function Home({
 
   const styles = useSpring({
     loop: false,
+    // delay: 3000,
     to: [
       { opacity: 1, marginLeft: "0rem" },
     ],
     from: { opacity: .75, marginLeft: "100rem" },
-    config: { duration: 3000, friction: 100, tension: 100 }
+    config: { duration: 2000, friction: 100, tension: 100 }
 
   })
 
@@ -506,23 +515,23 @@ export default function Home({
          in place of 'smooth' */
     });
   };
-  
+
 
   return (
-    <Wrraper BGC={global_theme[theme].color}>
+    <Wrapper BGC={global_theme[theme].color}>
       <Head>
         <title>Levi Chen FrontEnd Developer, UI UX Designer portfolio, BCIT D3 Web Development 2022 </title>
         <meta name="description"
           content="This portfolio includes web and mobile development projects, especially with MongoDB, Express, React, and Node. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022 who enthuse in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. " />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="thumbnail" content="../public/Logo.svg"/>
+        <meta name="thumbnail" content="../public/Logo.svg" />
         <meta name="description" content="This portfolio includes web and mobile development projects, especially React and React-Native. Also, there are some UI UX projects in the portfolio. Levi Chen graduated from BCIT D3 Program 2022, enthused in Web and Mobile development and design. This portfolio mainly collects the project from 2020-to 2022. "></meta>
       </Head>
       <MainView src='black.png' />
       <Container name="Top">
         <NavCon>
-          {windowW>1000? 
-          <NavBar sx={{fontSize:22}}/>: <NavBar sx={{fontSize:30}}/>
+          {windowW > 1000 ?
+            <NavBar sx={{ fontSize: 22 }} /> : <NavBar sx={{ fontSize: 30 }} />
           }
         </NavCon>
         <MainViewCon>
@@ -540,12 +549,12 @@ export default function Home({
             {/* <Intro1>Hello, I am Levi.</Intro1>
             <Intro2>Front-end Developer</Intro2>
             <Intro2>UI/UX Desinger</Intro2> */}
-             
+
             {windowW > 1000 ?
-            <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "2rem" }} /> :
-            <SocialIcon  value={{ color: "#E5E5E5", className: "global-class-name", size: "1.75rem" }} />
-          }
-            
+              <SocialIcon value={{ color: "#E5E5E5", className: "global-class-name", size: "2rem" }} /> :
+              <SocialIcon value={{ color: "#E5E5E5", className: "global-class-name", size: "1.75rem" }} />
+            }
+
           </ShortIntroCon>
 
           <PicCon >   <PicImg src='LeviChen2.png' /> </PicCon>
@@ -553,32 +562,26 @@ export default function Home({
 
       </Container>
       <Container2>
-
-
         <Content>
-
           <Introduction>
-
             <Title2> Introduction</Title2>
             <Intro3>
               Levi is about to graduate from Digital Design and Development at BCIT. During the study, he learns how to design and build an application across platforms, separately web and mobile. As a result, he knows how to use UI/UX, front-end, and back-end skills that are Figma, HTML, CSS, JavaScript, react, and react-native in projects.
               Currently, he focuses on UI/UX design and front-end development because he likes creating exciting visual enjoyment and a friendly user experience.
             </Intro3>
           </Introduction>
-
-
           <Projects >
-          <Title>Projects </Title>
-          <Intro>
+            <Title>Projects </Title>
+            <Intro>
+            </Intro>
 
-          </Intro>
-
-            {project.slice(0, count).map((o, i) => <>
-              <animated.div style={styles} key={i}  >
+            {project.slice(0, count).map((o, i) =>
+              <>
+                {/* <animated.div style={styles} key={i}  > */}
                 <ProjectItem name={o.name} >
-                  <ProjectCard>
-                    <ActionAreaCard 
-                    key={i}
+                  <ProjectCard >
+                    <ActionAreaCard
+                      key={i}
                       title={o.title}
                       time={o.time}
                       codeTool={o.codeTool}
@@ -593,37 +596,37 @@ export default function Home({
                     {/* <Intro> Enter</Intro> */}
                     <ArrowButton>
                       <UpArrow>
-                <Link activeClass="active" to={o.back} spy={true} smooth={true} >
-                        <ArrowDropUpRoundedIcon  sx={{ fontSize: 50 }} />
-                     </Link>
-                      </UpArrow>
-                      {o.next!==""?
-                      <DownArrow>
-                      <Link activeClass="active" to={o.next} spy={true} smooth={true}>
-                        <ArrowDropDownRoundedIcon  sx={{ fontSize: 50 }} />
+                        <Link activeClass="active" to={o.back} spy={true} smooth={true} >
+                          <ArrowDropUpRoundedIcon sx={{ fontSize: 50 }} />
                         </Link>
-                      </DownArrow>:null}
+                      </UpArrow>
+                      {o.next !== "" ?
+                        <DownArrow>
+                          <Link activeClass="active" to={o.next} spy={true} smooth={true}>
+                            <ArrowDropDownRoundedIcon sx={{ fontSize: 50 }} />
+                          </Link>
+                        </DownArrow> : null}
                     </ArrowButton>
                   </ProjectIntro>
                 </ProjectItem>
-
-              </animated.div>
-            </>)}
+                {/* </animated.div> */}
+              </>
+            )}
 
 
           </Projects>
 
           <UpArrow>
-                        <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
-                      </UpArrow>
+            <ArrowDropUpRoundedIcon onClick={scrollToTop} sx={{ fontSize: 50 }} />
+          </UpArrow>
         </Content>
 
       </Container2>
       <Footer BGC={foot_theme[theme].color}
-      onClick={() => setTheme(theme === 'default' ? 'dark' : 'default')} 
-      label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
-      checked={theme === 'default' ? null : "defaultChecked"}
+        onClick={() => setTheme(theme === 'default' ? 'dark' : 'default')}
+        label={theme === 'default' ? 'Light Mode' : 'Dark Mode'}
+        checked={theme === 'default' ? null : "defaultChecked"}
       />
-    </Wrraper>
+    </Wrapper>
   )
 }
