@@ -8,12 +8,10 @@ import Footer from '../comps/Footer'
 import SocialIcon from '../comps/SocialIcon'
 import { useRouter } from 'next/router'
 import { useTransition, animated, useSpring } from '@react-spring/web'
-import { config } from 'react-spring'
 import { project } from '../data/project'
 import ActionAreaCard from '../comps/ActionAreaCard'
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { global_theme, foot_theme } from '../utils/variables'
 import { useTheme } from '../utils/provider'
@@ -462,7 +460,7 @@ export default function Home({
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [project]);
+  }, []);
 
   const styles = useSpring({
     loop: false,
@@ -577,8 +575,7 @@ export default function Home({
 
             {project.slice(0, count).map((o, i) =>
               <>
-                {/* <animated.div style={styles} key={i}  > */}
-                <ProjectItem name={o.name} >
+                <ProjectItem name={o.name} key={i}>
                   <ProjectCard >
                     <ActionAreaCard
                       key={i}
@@ -609,7 +606,6 @@ export default function Home({
                     </ArrowButton>
                   </ProjectIntro>
                 </ProjectItem>
-                {/* </animated.div> */}
               </>
             )}
 

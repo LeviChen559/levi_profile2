@@ -354,7 +354,7 @@ export default function About() {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [exp]);
+  }, []);
   const props2 = useSpring({
     to: { marginLeft: "0rem" },
     from: { marginLeft: "100rem" },
@@ -466,7 +466,7 @@ export default function About() {
             <Title2>Education and Experience</Title2>
             <ExpItems >
               {exp.slice(0, count).map((o, i) => <>
-                <ExperienceCard expName={o.expName}>
+                <ExperienceCard expName={o.expName} key={i}>
                   <ExpCard
                     key={i}
                     title={o.title}
@@ -498,17 +498,17 @@ export default function About() {
             <Intro2 name="Development"> Development</Intro2>
             <Tool >
               {webtools.map((o, i) => <>
-                {/* <animated.div style={props}> */}
-                <ToolsCard
-                  key={i}
-                  title={o.title}
-                  toolname={o.toolnaame}
-                  src={o.src}
-                  exp={o.exp}
-                  src2={o.src2}
-                  sx={o.sx}
-                />
-                {/* </animated.div> */}
+                <animated.div style={props}>
+                  <ToolsCard
+                    key={i}
+                    title={o.title}
+                    toolname={o.toolnaame}
+                    src={o.src}
+                    exp={o.exp}
+                    src2={o.src2}
+                    sx={o.sx}
+                  />
+                </animated.div>
               </>
               )}
             </Tool>
@@ -556,17 +556,17 @@ export default function About() {
             <Intro2 name="IndustrialDesign"> Industrial Design</Intro2>
             <Tool >
               {idtools.map((o, i) => <>
-                {/* <animated.div style={props}> */}
-                <ToolsCard
-                  key={i}
-                  title={o.title}
-                  toolname={o.toolnaame}
-                  src={o.src}
-                  exp={o.exp}
-                  src2={o.src2}
-                  sx={o.sx}
-                />
-                {/* </animated.div> */}
+                <animated.div style={props}>
+                  <ToolsCard
+                    key={i}
+                    title={o.title}
+                    toolname={o.toolnaame}
+                    src={o.src}
+                    exp={o.exp}
+                    src2={o.src2}
+                    sx={o.sx}
+                  />
+                </animated.div>
               </>
               )}
             </Tool>
