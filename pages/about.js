@@ -303,11 +303,17 @@ align-items:center;
 justify-content:flex-start;
 flex-wrap:wrap;
 width:75%;
-
 @media (max-width: 1000px)
 {
   width:100%;
-}`
+};
+@media (max-width: 800px)
+{
+  flex-direction:column;
+  flex-wrap:nowrap;
+};
+
+`
 const ExperienceCard = styled.div`
 width:50%;
 margin-left:${(props) => props.mr};
